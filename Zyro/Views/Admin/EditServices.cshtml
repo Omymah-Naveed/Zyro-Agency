@@ -1,0 +1,89 @@
+﻿@model Zyro.Models.ServiceViewModel
+
+@{
+    Layout = "_LayoutAdmin";
+    ViewData["Title"] = "EditServices";
+    ViewData["Title"] = "Service";
+}
+
+<style>
+    .btn-upload {
+        background: #235695;
+        color: white;
+        border: none;
+        padding: 6px 12px;
+        border-radius: 5px;
+        font-size: 16px;
+        transition: 0.3s;
+    }
+
+        .btn-upload:hover {
+            background: #2373AC;
+            color: ghostwhite;
+        }
+
+    .form-floating > .form-control:focus,
+    .form-floating > .form-select:focus {
+        border-color: #44B1DA !important;
+        box-shadow: none;
+    }
+
+        .form-floating > .form-control:focus ~ label,
+        .form-floating > .form-select:focus ~ label {
+            color: #2373AC !important;
+            font-weight: bold;
+        }
+</style>
+
+<div class="container-xxl">
+    <div class="container py-5 px-lg-5">
+        <div class="wow fadeInUp" data-wow-delay="0.1s">
+            <h1 class="text-center mb-5">Edit Services</h1>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-7">
+                <div class="wow fadeInUp" data-wow-delay="0.3s">
+                    <form asp-action="EditServices" enctype="multipart/form-data" method="post" class="shadow p-4 rounded bg-white">
+                        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input asp-for="Title" class="form-control" required placeholder="Enter Service Title" />
+                                    <label asp-for="Title">Service Title</label>
+                                    <span asp-validation-for="Title" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input asp-for="Sdescription" class="form-control" placeholder="Enter Short Description" />
+                                    <label asp-for="Sdescription">Short Description</label>
+                                    <span asp-validation-for="Sdescription" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-floating">
+                                    <input asp-for="Description" class="form-control" placeholder="Enter Description" />
+                                    <label asp-for="Description">Service Description</label>
+                                    <span asp-validation-for="Description" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-floating">
+                                    <input asp-for="Image" type="file" class="form-control" />
+                                    <label asp-for="Image">Upload Image</label>
+                                    <span asp-validation-for="Image" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-upload w-100 rounded-pill">Update</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

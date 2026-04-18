@@ -1,0 +1,154 @@
+﻿@model Zyro.Models.BlogViewModel
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "EditBlog";
+    var userName = Context.Session.GetString("username") ?? "";
+    var userEmail = Context.Session.GetString("useremail") ?? "";
+}
+
+
+<style>
+    button.btn.btn-publish-blog {
+        background-color: #2373AE !important;
+        color: #fff !important;
+        border: 1px solid #2373AE !important;
+        font-weight: 500;
+        transition: all 0.3s ease;
+    }
+
+        button.btn.btn-publish-blog:hover {
+            background-color: #fff !important;
+            color: #2373AE !important;
+            border: 1px solid #2373AE !important;
+        }
+</style>
+
+<!-- Header Start -->
+<div class="container-fluid bg-breadcrumb">
+    <ul class="breadcrumb-animation">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <div class="container text-center py-5" style="max-width: 900px;">
+        <h3 class="display-3 mb-4 wow fadeInDown" data-wow-delay="0.1s">Edit Blog</h3>
+        <ol class="breadcrumb justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
+            <li class="breadcrumb-item"><a asp-controller="User" asp-action="Index">Home</a></li>
+            <li class="breadcrumb-item"><a asp-controller="User" asp-action="Profile">Profile</a></li>
+            <li class="breadcrumb-item active" style="color:#2373AE;">Edit Blog</li>
+        </ol>
+    </div>
+</div>
+<!-- Header End -->
+<!-- Contact Start -->
+<div class="container-fluid contact py-5">
+    <div class="container py-5">
+        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 900px;">
+            <h4 class=" mb-2 fw-bold" style="color:#2373AE;">Our Blog</h4>
+            <h1 class="display-5 mb-4">Latest Insights & Updates</h1>
+            <p class="mb-0" style="color:#2373AE;">
+                Explore our blogs to stay updated with the latest trends, tips, and stories. Dive in and discover fresh ideas every week!
+            </p>
+        </div>
+
+        <div class="row g-5 align-items-center">
+            <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
+                <h2 class="display-5 mb-2">Edit Here</h2>
+
+
+
+                <form asp-action="AddBlog" method="post" id="AddBlogForm" novalidate>
+                    <div class="row g-3">
+                        <div class="col-lg-12 col-xl-6">
+                            <div class="form-floating">
+                                <input asp-for="Name" class="form-control" placeholder="Your Name" value="@userName" readonly />
+                                <label asp-for="Name"></label>
+                                <span asp-validation-for="Name" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12 col-xl-6">
+                            <div class="form-floating">
+                                <input asp-for="Email" class="form-control" placeholder="Your Email" value="@userEmail" readonly />
+                                <label asp-for="Email"></label>
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <input asp-for="Title" class="form-control" id="Title" placeholder="Title" required minlength="5" maxlength="100" />
+                                <label asp-for="Title"></label>
+                                <span asp-validation-for="Title" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <textarea asp-for="Description" class="form-control" id="Description" style="height: 160px" placeholder="Description" required minlength="100" maxlength="8000"></textarea>
+                                <label asp-for="Description">
+                                    Description <small id="charCount" class="text-muted">(8000 characters remaining)</small>
+                                </label>
+                                <small class="text-danger" id="DescriptionError" style="display: none;">Description must be between 100 and 8000 characters.</small>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-publish-blog w-100 py-3">Update</button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+
+            <!-- Right side IMAGE -->
+            <div class="col-lg-5 wow fadeInRight" data-wow-delay="0.3s">
+                <img src="~/img/editBlogBanner.png" alt="Add Blog Banner" class="img-fluid rounded shadow" style="max-height: 500px; width: 100%; object-fit: cover;">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Contact End -->
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const DescriptionInput = document.getElementById("Description");
+
+            const DescriptionError = document.getElementById("DescriptionError");
+            const charCount = document.getElementById("charCount");
+
+
+            // Description validation and counter
+            DescriptionInput.addEventListener("input", function () {
+                const len = DescriptionInput.value.length;
+                const remaining = 8000 - len;
+                charCount.textContent = `${remaining} characters remaining`;
+                DescriptionError.style.display = (len < 100 || len > 8000) ? "block" : "none";
+            });
+
+            // Form validation before submit
+            document.getElementById("AddBlogForm").addEventListener("submit", function (e) {
+                let valid = true;
+
+
+                const desLen = DescriptionInput.value.length;
+                if (desLen < 100 || desLen > 8000) {
+                    DescriptionError.style.display = "block";
+                    valid = false;
+                }
+
+                if (!valid) {
+                    e.preventDefault();
+                }
+            });
+        });
+    </script>
+}

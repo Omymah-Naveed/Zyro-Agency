@@ -1,0 +1,176 @@
+﻿@model ContactChatViewModel
+@{
+    Layout = "_LayoutAdmin";
+}
+
+
+<style>
+    /* Custom Send Button */
+    .btn-send {
+        background-color: #2373AC !important;
+        border: 1px solid #2373AC !important;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        padding: 0;
+    }
+
+        /* Default icon color */
+        .btn-send i {
+            color: #fff !important;
+            font-size: 16px;
+            pointer-events: none; /* ensures icon doesn't block hover */
+        }
+
+        /* Hover state */
+        .btn-send:hover {
+            background-color: #fff !important;
+            border: 1px solid #2373AC !important;
+        }
+
+            .btn-send:hover i {
+                color: #2373AC !important;
+            }
+</style>
+<div class="modal-header">
+    <h5 class="modal-title">Chat with @Model.ContactName</h5>
+</div>
+
+<div class="modal-body p-0 d-flex flex-column" style="height: 500px;">
+
+                <!-- Search & Date Filter -->
+                <div class="p-2 bg-light border-bottom">
+                    <div class="row g-2 align-items-center">
+                        <div class="col-12 col-md-5">
+                            <input type="text" id="searchInput" class="form-control" placeholder="🔍 Search messages...">
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <input type="date" id="dateFilter" class="form-control">
+                        </div>
+                        <div class="col-12 col-md-3">
+                            <button id="clearFilters" class="btn btn-outline-success w-100">
+                                <i class="fas fa-times"></i> Clear
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Messages Area -->
+                <div id="chatMessages" class="flex-grow-1 p-3 overflow-auto" style="background-color: #f8f9fa;">
+                    @foreach (var msg in Model.Messages)
+                    {
+                        var isAdmin = msg.SenderType?.ToLower() == "admin";
+                        <div class="chat-message mb-3"
+                             data-message="@msg.MessageContent.ToLower()"
+                             data-date="@(msg.MessageDate?.ToString("yyyy-MM-dd"))">
+
+                            <div class="d-flex @(isAdmin ? "justify-content-end" : "justify-content-start")">
+                                <div class="p-2 rounded shadow-sm" style="
+                    max-width: 70%;
+                    background-color:@(isAdmin ? "#44B0D9" : "#e9ecef");
+                    color:@(isAdmin ? "white" : "black");
+                    border-radius: 12px;">
+
+                                    <div class="fw-bold small mb-1">@msg.SenderType</div>
+                                    <div class="message-text">@msg.MessageContent</div>
+
+                                    <!-- Display full datetime -->
+                                    <div class="text-muted small text-end mt-1" style="font-size: 0.75em;">
+                                        @msg.MessageDate
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    }
+                </div>
+
+                <!-- Message Input -->
+    <div class="p-2 border-top bg-white">
+        <form asp-action="SendContactReply" method="post" class="d-flex">
+            <input type="hidden" name="contactId" value="@Model.ContactId" />
+            <input type="text" name="message" class="form-control me-2" placeholder="Type a reply..." required />
+            <button type="submit" class="btn btn-send">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </form>
+    </div>
+            </div>
+       
+
+@section Scripts {
+    <script>
+        const searchInput = document.getElementById("searchInput");
+        const dateFilter = document.getElementById("dateFilter");
+        const clearFilters = document.getElementById("clearFilters");
+        const chatMessagesContainer = document.getElementById("chatMessages");
+        const contactId = @Model.ContactId; // Used for AJAX reload
+        let isAutoScrollEnabled = true;
+
+        // Highlight function
+        function highlightMatch(text, term) {
+            if (!term) return text;
+            const regex = new RegExp(`(${term})`, "gi");
+            return text.replace(regex, '<mark style="background:yellow;">$1</mark>');
+        }
+
+        // Apply filters to visible messages
+        function applyFilters() {
+            const searchTerm = searchInput.value.toLowerCase();
+            const selectedDate = dateFilter.value;
+            const messages = document.querySelectorAll(".chat-message");
+
+            messages.forEach(msg => {
+                const messageTextElem = msg.querySelector(".message-text");
+                const originalText = messageTextElem.textContent;
+                const textMatch = originalText.toLowerCase().includes(searchTerm);
+        const dateMatch = !selectedDate || msg.dataset.date === selectedDate;
+
+                messageTextElem.innerHTML = highlightMatch(originalText, searchTerm);
+                msg.style.display = (textMatch && dateMatch) ? "block" : "none";
+            });
+        }
+
+        // Scroll helpers
+        function scrollToBottom() {
+            chatMessagesContainer.scrollTop = chatMessagesContainer.scrollHeight;
+        }
+        function isNearBottom() {
+            return chatMessagesContainer.scrollHeight - chatMessagesContainer.scrollTop <= chatMessagesContainer.clientHeight + 50;
+        }
+
+        // Event listeners
+        clearFilters.addEventListener("click", () => {
+            searchInput.value = "";
+            dateFilter.value = "";
+            applyFilters();
+        });
+        searchInput.addEventListener("input", applyFilters);
+        dateFilter.addEventListener("change", applyFilters);
+
+        // Reload messages with AJAX
+        function reloadMessages() {
+            $.get(`/Admin/ViewContactChat?contactId=${contactId}`, function (data) {
+                // Extract only the #chatMessages content from returned HTML
+                const newMessagesHtml = $(data).find("#chatMessages").html();
+                if (newMessagesHtml) {
+                    const wasNearBottom = isNearBottom();
+                    $("#chatMessages").html(newMessagesHtml);
+                    applyFilters(); // reapply filters after reload
+                    if (wasNearBottom) scrollToBottom();
+                }
+            });
+        }
+
+        // Auto reload every 5 seconds
+        setInterval(reloadMessages, 5000);
+
+        // Initial scroll to bottom
+        scrollToBottom();
+    </script>
+}

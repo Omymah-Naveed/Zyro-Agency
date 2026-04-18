@@ -1,0 +1,413 @@
+﻿@model FaqViewModel
+
+@{
+    Layout = "_LayoutAdmin";
+    ViewData["Title"] = "FAQs";
+}
+
+<style>
+
+    body {
+        background-color: var(--light);
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    /* Cards */
+    .stat-card {
+        background: #fff;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        transition: transform 0.2s ease-in-out;
+    }
+
+        .stat-card:hover {
+            transform: translateY(-4px);
+        }
+
+    .stat-icon {
+        font-size: 32px;
+        color: var(--primary);
+    }
+
+    .stat-value {
+        font-size: 22px;
+        font-weight: 600;
+        color: var(--dark);
+    }
+
+    .stat-label {
+        font-size: 14px;
+        color: gray;
+    }
+
+    /* Toolbar */
+    .toolbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 25px 0;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    /* Table */
+    .table-card {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        padding: 15px;
+        margin-top: 20px;
+    }
+
+     .badge-status {
+        border-radius: 30px;
+        padding: 6px 12px;
+        font-size: 13px;
+        font-weight: 500;
+    }
+
+    .badge-visible {
+        background: rgba(0, 176, 80, 0.15);
+        color: #008000;
+    }
+
+    .badge-hidden {
+        background: rgba(255, 0, 0, 0.15);
+        color: #b30000;
+    }
+
+    /*======================================= */
+
+    /* Add Blogs Button */
+    .btn-add-faqs {
+        background-color: #235693;
+        color: #fff;
+        border: 2px solid #235693;
+        font-weight: 500;
+        padding: 0.45rem 1rem;
+        transition: all 0.3s ease;
+    }
+
+        .btn-add-faqs:hover {
+            background-color: #fff;
+            color: #235693;
+            border-color: #235693;
+        }
+
+        /* Focus state */
+        .btn-add-faqs:focus,
+        .btn-add-faqs:active {
+            outline: none; /* remove default bootstrap blue outline */
+            box-shadow: 0 0 0 0.2rem rgba(35, 86, 147, 0.4); /* custom shadow with theme color */
+            border-color: #235693;
+        }
+    /*======================================= */
+    /*======================================= */
+    /* 🔹 Dropdown Button */
+    .custom-dropdown-btn {
+        font-weight: 500;
+        border-radius: 8px;
+        padding: 6px 14px;
+        background-color: #f8f9fa;
+        transition: all 0.3s ease;
+    }
+
+        .custom-dropdown-btn:hover {
+            background-color: #e9f4fb;
+            border-color: #44B0D9;
+            color: #235695;
+        }
+
+    /* 🔹 Dropdown Menu */
+    .custom-dropdown-menu {
+        border-radius: 10px;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+        padding: 6px 0;
+        border: none;
+        min-width: 170px;
+    }
+
+        /* 🔹 Dropdown Items */
+        .custom-dropdown-menu .dropdown-item {
+            padding: 10px 16px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #333;
+            transition: all 0.2s ease;
+            border-radius: 6px;
+            margin: 2px 6px;
+        }
+
+            /* Hover + Focus */
+            .custom-dropdown-menu .dropdown-item:hover,
+            .custom-dropdown-menu .dropdown-item:focus {
+                background-color: #44B0D9 !important;
+                color: #fff !important;
+            }
+
+            /* Active State */
+            .custom-dropdown-menu .dropdown-item.active,
+            .custom-dropdown-menu .dropdown-item:active {
+                background-color: #44B0D9 !important;
+                color: #fff !important;
+            }
+
+            /* ❌ Delete special */
+            .custom-dropdown-menu .dropdown-item.text-danger:hover {
+                background-color: #dc3545 !important;
+                color: #fff !important;
+            }
+
+            /* stats icons */
+
+    .stat-icon-img {
+        width: 40px; /* same as icon size */
+        height: 40px;
+        object-fit: contain; /* distort na ho */
+    }
+
+    .stat-icon-img-big {
+        width: 55px;
+        height: 55px;
+    }
+    /*======================================= */
+</style>
+
+<!-- Stats Overview -->
+<div class="row g-3">
+    <div class="col-md-3">
+        <div class="stat-card">
+            <div>
+                <div class="stat-value">@Model.FaqList.Count()</div>
+                <div class="stat-label">Total FAQs</div>
+            </div>
+            <img src="/img/total-faqs.png" alt="Total FAQs" class="stat-icon-img-big" />
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="stat-card">
+            <div>
+                <div class="stat-value">@Model.FaqList.Count(f => f.Action != "Hide")</div>
+                <div class="stat-label">Visible FAQs</div>
+            </div>
+            <img src="/img/visible-faqs.png" alt="Visible FAQs" class="stat-icon-img" />
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="stat-card">
+            <div>
+                <div class="stat-value">@Model.FaqList.Count(f => f.Action == "Hide")</div>
+                <div class="stat-label">Hidden FAQs</div>
+            </div>
+            <img src="/img/hidden-faqs.png" alt="Hidden FAQs" class="stat-icon-img" />
+        </div>
+    </div>
+</div>
+
+<!-- Toolbar -->
+<div class="toolbar">
+    <div class="input-group w-50">
+        <span class="input-group-text bg-white"><i class="bi bi-search"></i></span>
+        <input type="text" class="form-control" placeholder="Search FAQs by title or description..." />
+    </div>
+    <div>
+        <select class="form-select filter-dropdown d-inline-block w-auto">
+            <option value="">Filter by Status</option>
+            <option>Visible</option>
+            <option>Hidden</option>
+        </select>
+        <a asp-controller="Admin" asp-action="AddFaq" class="btn btn-add-faqs rounded-pill ms-2">
+            <i class="bi bi-plus-circle"></i> Add FAQ
+        </a>
+    </div>
+</div>
+
+<!-- Tabs -->
+<ul class="nav nav-tabs" id="faqTabs" role="tablist">
+    <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tableView">Table View</button></li>
+    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#cardView">Card View</button></li>
+</ul>
+
+<div class="tab-content">
+    <!-- Table View -->
+    <div class="tab-pane fade show active" id="tableView">
+        <div class="table-card">
+            <div class="table-responsive">
+                <table class="table align-middle">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>FAQ</th>
+                            <th>Description</th>
+                            <th>Status</th>
+                            <th class="text-center">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var faq in Model.FaqList)
+                        {
+                            <tr>
+                                <td>@faq.Id</td>
+                                <td>
+                                    <div class="fw-bold">@faq.Title</div>
+                                </td>
+                                <td>
+                                    @(faq.Description.Length > 80 ? faq.Description.Substring(0, 80) + "..." : faq.Description)
+                                    @if (faq.Description.Length > 80)
+                                    {
+                                        <a href="#" onclick="showFullDescription('@faq.Description.Replace("'", "\\'")')" style="color:#2373AE;">Read more</a>
+                                    }
+                                </td>
+                                <td>
+                                    @if (faq.Action == "Hide")
+                                    {
+                                        <span class="badge badge-status badge-hidden">Hidden</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge badge-status badge-visible">Visible</span>
+                                    }
+                                </td>
+                                <td class="text-center">
+                                    <div class="dropdown">
+                                        <button class="btn btn-sm btn-light border dropdown-toggle custom-dropdown-btn" type="button" data-bs-toggle="dropdown">
+                                            Manage
+                                        </button>
+                                        <ul class="dropdown-menu custom-dropdown-menu">
+                                            <li>
+                                                <a asp-action="EditFaq" asp-route-id="@faq.Id" class="dropdown-item">Edit</a>
+                                            </li>
+
+                                            <li>
+                                                <form asp-action="UpdateFaqAction" method="post" class="m-0">
+                                                    <input type="hidden" name="id" value="@faq.Id" />
+                                                    <button type="submit" class="dropdown-item">Show</button>
+                                                </form>
+                                            </li>
+
+                                            <li>
+                                                <form asp-action="UpdateFaqActionTwo" method="post" class="m-0">
+                                                    <input type="hidden" name="id" value="@faq.Id" />
+                                                    <button type="submit" class="dropdown-item">Hide</button>
+                                                </form>
+                                            </li>
+
+                                            <li>
+                                                <form asp-action="DeleteFaq" method="post" class="m-0" onsubmit="return confirm('Delete this FAQ?');">
+                                                    <input type="hidden" name="id" value="@faq.Id" />
+                                                    <button type="submit" class="dropdown-item text-danger">Delete</button>
+                                                </form>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card View -->
+    <div class="tab-pane fade" id="cardView">
+        <div class="row mt-3">
+            @foreach (var faq in Model.FaqList)
+            {
+                <div class="col-md-4 mb-4">
+                    <div class="stat-card flex-column align-items-start">
+                        <div class="fw-bold">@faq.Title</div>
+                        <div class="text-muted small">
+                            @(faq.Description.Length > 100 ? faq.Description.Substring(0, 100) + "..." : faq.Description)
+                        </div>
+
+                        <!-- Show More button -->
+                        @if (faq.Description.Length > 100)
+                        {
+                            <button type="button"
+                                    class="btn btn-link p-0 mt-1"
+                                    style="color:#2373AE;"
+                                    onclick="showFullDescription('@faq.Description.Replace("'", "\\'")')">
+                                Show More
+                            </button>
+                        }
+
+                        <div class="mt-2">
+                            @if (faq.Action == "Hide")
+                            {
+                                <span class="badge bg-danger">Hidden</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-success">Visible</span>
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+</div>
+
+<!-- Reusable Description Modal -->
+<div class="modal fade" id="descriptionModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Full Description</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body" id="descriptionModalBody"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function showFullDescription(description) {
+        document.getElementById('descriptionModalBody').innerText = description;
+        var myModal = new bootstrap.Modal(document.getElementById('descriptionModal'));
+        myModal.show();
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const searchInput = document.querySelector(".toolbar input[type='text']");
+        const filterSelect = document.querySelector(".toolbar select");
+
+        function filterFaqs() {
+            const searchValue = searchInput.value.toLowerCase();
+            const filterValue = filterSelect.value.toLowerCase();
+
+            // Table filtering
+            document.querySelectorAll("#tableView tbody tr").forEach(row => {
+                const title = row.querySelector(".fw-bold")?.textContent.toLowerCase() || "";
+                const desc = row.querySelector("td:nth-child(3)")?.textContent.toLowerCase() || "";
+                const status = row.querySelector(".badge")?.textContent.toLowerCase() || "";
+
+                const matchesSearch = title.includes(searchValue) || desc.includes(searchValue);
+                const matchesFilter = !filterValue || status.includes(filterValue);
+
+                row.style.display = (matchesSearch && matchesFilter) ? "" : "none";
+            });
+
+            // Card filtering
+            document.querySelectorAll("#cardView .col-md-4").forEach(card => {
+                const title = card.querySelector(".fw-bold")?.textContent.toLowerCase() || "";
+                const desc = card.querySelector(".text-muted")?.textContent.toLowerCase() || "";
+                const status = card.querySelector(".badge")?.textContent.toLowerCase() || "";
+
+                const matchesSearch = title.includes(searchValue) || desc.includes(searchValue);
+                const matchesFilter = !filterValue || status.includes(filterValue);
+
+                card.style.display = (matchesSearch && matchesFilter) ? "" : "none";
+            });
+        }
+
+        searchInput.addEventListener("keyup", filterFaqs);
+        filterSelect.addEventListener("change", filterFaqs);
+    });
+</script>

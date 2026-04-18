@@ -1,0 +1,390 @@
+﻿@model RegisterationUserCustomViewModel
+
+@{
+    ViewData["Title"] = "UserLogInfo";
+    Layout = "_LayoutAdmin";
+}
+
+<style>
+
+
+    body {
+        background-color: var(--light);
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    /* Cards */
+    .stat-card {
+        background: #fff;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        transition: transform 0.2s ease-in-out;
+    }
+
+        .stat-card:hover {
+            transform: translateY(-4px);
+        }
+
+    .stat-icon {
+        font-size: 32px;
+        color: var(--primary);
+    }
+
+    .stat-value {
+        font-size: 22px;
+        font-weight: 600;
+        color: var(--dark);
+    }
+
+    .stat-label {
+        font-size: 14px;
+        color: gray;
+    }
+
+    /* Toolbar */
+    .toolbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 25px 0;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+
+    /* Table */
+    .table-card {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        padding: 15px;
+        margin-top: 20px;
+    }
+
+    .user-info {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+        .user-info img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+    .badge-status {
+        border-radius: 30px;
+        padding: 6px 12px;
+        font-size: 13px;
+        font-weight: 500;
+    }
+
+    .badge-active {
+        background: rgba(0, 176, 80, 0.15);
+        color: #008000;
+    }
+
+    .badge-frozen
+    {
+        background: rgba(255, 0, 0, 0.15);
+        color: #b30000;
+    }
+    /* ====================================================== */
+    /* 🔹 Dropdown Button Style */
+    .custom-dropdown-btn {
+        font-weight: 500;
+        border-radius: 8px;
+        padding: 6px 14px;
+        background-color: #f8f9fa;
+        transition: all 0.3s ease;
+    }
+
+        .custom-dropdown-btn:hover {
+            background-color: #e9f4fb;
+            border-color: #44B0D9;
+            color: #235695;
+        }
+
+    /* 🔹 Dropdown Menu */
+    .custom-dropdown-menu {
+        border-radius: 10px;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+        padding: 6px 0;
+        border: none;
+        min-width: 160px;
+    }
+
+        /* 🔹 Dropdown Items */
+        .custom-dropdown-menu .dropdown-item {
+            padding: 10px 16px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #333;
+            transition: all 0.2s ease;
+            border-radius: 6px;
+            margin: 2px 6px;
+        }
+
+            /* Hover + Focus */
+            .custom-dropdown-menu .dropdown-item:hover,
+            .custom-dropdown-menu .dropdown-item:focus {
+                background-color: #44B0D9 !important;
+                color: #fff !important;
+            }
+
+            /* Active */
+            .custom-dropdown-menu .dropdown-item.active,
+            .custom-dropdown-menu .dropdown-item:active {
+                background-color: #44B0D9 !important;
+                color: #fff !important;
+            }
+
+            /* ❌ Delete option special */
+            .custom-dropdown-menu .dropdown-item.text-danger:hover {
+                background-color: #dc3545 !important;
+                color: #fff !important;
+            }
+
+            /* icons stats */
+    .stat-icon-img {
+        width: 40px; /* same size as icons */
+        height: 40px;
+        object-fit: contain;
+    }
+
+    .total-users-stat-icon-big {
+        width: 55px;
+        height: 55px;
+    }
+    /* ====================================================== */
+    
+</style>
+
+<!-- Stats Overview -->
+<div class="row g-3 text-center">
+    <div class="col-md-3">
+        <div class="stat-card">
+            <div>
+                <div class="stat-value">@Model.userList?.Count()</div>
+                <div class="stat-label">Total Users</div>
+            </div>
+            <img src="/img/total-users.png" alt="Total Users" class="stat-icon-img .total-users-stat-icon-big" />
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="stat-card">
+            <div>
+                <div class="stat-value">@Model.userList?.Count(u => u.Action != "Freeze")</div>
+                <div class="stat-label">Active Users</div>
+            </div>
+            <img src="/img/active-employees.png" alt="Active Users" class="stat-icon-img" />
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="stat-card">
+            <div>
+                <div class="stat-value">@Model.userList?.Count(u => u.Action == "Freeze")</div>
+                <div class="stat-label">Frozen Users</div>
+            </div>
+            <img src="/img/inactive-employees.png" alt="Frozen Users" class="stat-icon-img" />
+        </div>
+    </div>
+</div>
+
+<!-- Toolbar -->
+<div class="toolbar">
+    <div class="input-group w-50">
+        <span class="input-group-text bg-white"><i class="bi bi-search"></i></span>
+        <input type="text" class="form-control" placeholder="Search users by name or email..." />
+    </div>
+    <div>
+        <select class="form-select filter-dropdown d-inline-block w-auto">
+            <option value="">Filter by Status</option>
+            <option>Active</option>
+            <option>Frozen</option>
+        </select>
+    </div>
+</div>
+
+<!-- Tabs -->
+<ul class="nav nav-tabs" id="userTabs" role="tablist">
+    <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tableView">Table View</button></li>
+    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#cardView">Card View</button></li>
+</ul>
+
+<div class="tab-content">
+    <!-- Table View -->
+    <div class="tab-pane fade show active" id="tableView">
+        <div class="table-card">
+            @if (Model.userList == null || !Model.userList.Any())
+            {
+                <div class="alert alert-warning text-center">No user records found.</div>
+            }
+            else
+            {
+                <div class="table-responsive">
+                    <table class="table align-middle">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>User</th>
+                                <th>Email</th>
+                                <th>City</th>
+                                <th>Age</th>
+                                <th>Status</th>
+                                <th class="text-center">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.userList)
+                            {
+                                <tr>
+                                    <td>@item.Id</td>
+                                    <td>
+                                        <div class="user-info">
+                                            @if (!string.IsNullOrEmpty(item.ImagePath))
+                                            {
+                                                <img src="~/profile_images/@item.ImagePath" />
+                                            }
+                                            else
+                                            {
+                                                <img src="~/img/default-user.png" />
+                                            }
+                                            <div>
+                                                <div class="fw-bold">@item.Name</div>
+                                                <div class="text-muted small">@item.Email</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>@item.Email</td>
+                                    <td>@item.City</td>
+                                    <td>@item.Age</td>
+                                    <td>
+                                        @if (item.Action == "Freeze")
+                                        {
+                                            <span class="badge badge-status badge-frozen">Frozen</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge badge-status badge-active">Active</span>
+                                        }
+                                    </td>
+                                    <td class="text-center">
+                                        <div class="dropdown">
+                                            <button class="btn btn-sm btn-light border dropdown-toggle custom-dropdown-btn" type="button" data-bs-toggle="dropdown">
+                                                Manage
+                                            </button>
+                                            <ul class="dropdown-menu custom-dropdown-menu">
+                                                <li>
+                                                    <form asp-action="DeleteRegisterationUsers" method="post" class="m-0" onsubmit="return confirm('Delete this user?');">
+                                                        <input type="hidden" name="id" value="@item.Id" />
+                                                        <button type="submit" class="dropdown-item text-danger">Delete</button>
+                                                    </form>
+                                                </li>
+                                                <li>
+                                                    <form asp-action="UpdateUserAction" method="post" class="m-0" onsubmit="return confirm('Freeze this user?');">
+                                                        <input type="hidden" name="id" value="@item.Id" />
+                                                        <button type="submit" class="dropdown-item">Freeze</button>
+                                                    </form>
+                                                </li>
+                                                <li>
+                                                    <form asp-action="UpdateUserActionTwo" method="post" class="m-0" onsubmit="return confirm('Unfreeze this user?');">
+                                                        <input type="hidden" name="id" value="@item.Id" />
+                                                        <button type="submit" class="dropdown-item">Unfreeze</button>
+                                                    </form>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+        </div>
+    </div>
+
+    <!-- Card View -->
+    <div class="tab-pane fade" id="cardView">
+        <div class="row mt-3">
+            @foreach (var item in Model.userList)
+            {
+                <div class="col-md-4 mb-4">
+                    <div class="stat-card">
+                        <div class="user-info">
+                            @if (!string.IsNullOrEmpty(item.ImagePath))
+                            {
+                                <img src="~/profile_images/@item.ImagePath" />
+                            }
+                            else
+                            {
+                                <img src="~/img/default-user.png" />
+                            }
+                            <div>
+                                <div class="fw-bold">@item.Name</div>
+                                <div class="text-muted small">@item.Email</div>
+                                <div class="text-muted small">@item.City</div>
+                            </div>
+                        </div>
+                        <div>
+                            @if (item.Action == "Freeze")
+                            {
+                                <span class="badge badge-status badge-frozen">Frozen</span>
+                            }
+                            else
+                            {
+                                <span class="badge badge-status badge-active">Active</span>
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const searchInput = document.querySelector(".toolbar input[type='text']");
+        const filterSelect = document.querySelector(".toolbar select");
+
+        function filterUsers() {
+            const searchValue = searchInput.value.toLowerCase();
+            const filterValue = filterSelect.value.toLowerCase();
+
+            // Table filtering
+            document.querySelectorAll("#tableView tbody tr").forEach(row => {
+                const name = row.querySelector(".fw-bold")?.textContent.toLowerCase() || "";
+                const email = row.querySelector(".text-muted")?.textContent.toLowerCase() || "";
+                const status = row.querySelector(".badge")?.textContent.toLowerCase() || "";
+
+                const matchesSearch = name.includes(searchValue) || email.includes(searchValue);
+                const matchesFilter = !filterValue || status.includes(filterValue);
+
+                row.style.display = (matchesSearch && matchesFilter) ? "" : "none";
+            });
+
+            // Card filtering
+            document.querySelectorAll("#cardView .col-md-4").forEach(card => {
+                const name = card.querySelector(".fw-bold")?.textContent.toLowerCase() || "";
+                const email = card.querySelector(".text-muted")?.textContent.toLowerCase() || "";
+                const status = card.querySelector(".badge")?.textContent.toLowerCase() || "";
+
+                const matchesSearch = name.includes(searchValue) || email.includes(searchValue);
+                const matchesFilter = !filterValue || status.includes(filterValue);
+
+                card.style.display = (matchesSearch && matchesFilter) ? "" : "none";
+            });
+        }
+
+        searchInput.addEventListener("keyup", filterUsers);
+        filterSelect.addEventListener("change", filterUsers);
+    });
+</script>

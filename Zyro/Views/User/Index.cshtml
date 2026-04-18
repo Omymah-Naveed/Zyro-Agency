@@ -1,0 +1,320 @@
+﻿@model IndexViewModel
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Index";
+
+}
+<div class="hero-header px-5">
+    <!-- Background Layer for moving shapes -->
+    <div class="hero-bg"></div>
+
+    <div class="rotate-img">
+        <img src="img/sty-1.png" class="img-fluid w-100" alt="">
+        <div class="rotate-sty-2"></div>
+    </div>
+
+    <div class="row gy-5 align-items-center">
+        <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
+            <h1 class="display-4 text-dark mb-4 wow fadeInUp" data-wow-delay="0.3s" style="color:#235695;">Zyro Agency</h1>
+            <p class="fs-4 mb-4 wow fadeInUp" data-wow-delay="0.5s" style="font-weight:bold;font-family:'Segoe Script';color:#2373AE;">Fueling brands from Zero to Zyro.</p>
+            <p class="fs-4 mb-4 wow fadeInUp" data-wow-delay="0.5s" style="color:#2d2c2c; font-family:Arial, Helvetica, sans-serif;">
+                Zyro Agency is a full-service digital marketing agency focused on delivering measurable results through creative strategy and cutting-edge technology.
+            </p>
+            <a asp-controller="User" asp-action="AboutUs" class="btn zyro-btn rounded-pill py-3 px-5 wow fadeInUp" data-wow-delay="0.7s">About Us</a>
+        </div>
+
+        <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.2s">
+            <img src="img/heroimg.png" class="img-fluid hero-main" alt="">
+        </div>
+    </div>
+</div>
+<!-- Hero Header End -->
+<!-- Navbar & Hero End -->
+
+
+<!-- About Start -->
+
+<div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 900px;">
+    <h1 class="mb-1" style="color:#2373AE; font-weight:bold;">About Us</h1>
+    <h3 class="display-5 mb-4" style="color:#182536;">Turning ideas into reality with dedication.</h3>
+</div>
+
+<div class="container-fluid overflow-hidden pt-3 pb-5">
+    <div class="container py-5">
+        <div class="row g-5">
+
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="RotateMoveLeft" style="padding:3%;">
+                    <img src="~/img/aboutus-img.png" class="img-fluid w-100" alt="" style="margin-top: -30px;">
+                </div>
+            </div>
+
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s" style="padding-top:3%;">
+                @if (Model.AboutusList != null && Model.AboutusList.Any())
+                {
+                    var about = Model.AboutusList.First(); <!-- we pick first record -->
+
+                    <h1 class="display-5 mb-4" style="color:#2d2c2c; font-weight:800;">
+                        @about.Title
+                    </h1>
+                    <p class="mb-4" style="font-size:20px; color:#182536;">
+                        @Html.Raw(about.Description)
+                    </p>
+
+                    <div style="padding-top:10%;">
+                        <h1 class="display-5 mb-4" style="color:#2d2c2c; font-weight:800;">
+                            @about.TitleTwo
+                        </h1>
+                        <p class="mb-4" style="font-size:20px; color:#182536;">
+                            @Html.Raw(about.DescriptionTwo)
+                        </p>
+                    </div>
+                }
+                else
+                {
+                    <p>No About Us information available.</p>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<!-- About End -->
+
+
+<!-- Service Start -->
+<div class="container-fluid service py-5">
+    <div class="container py-5">
+        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 900px;">
+            <h1 class="mb-1" style="color:#2373AE; font-weight:bold;">Our Services</h1>
+            <h3 class="display-5 mb-4" style="color:#182536;">What We Can Do For You</h3>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+            @foreach (var item in Model.ServiceList)
+            {
+                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item text-center rounded p-4">
+                        <div class="service-icon d-inline-block bg-light rounded p-4 mb-4">
+                            @if (!string.IsNullOrEmpty(item.ImagePath))
+                            {
+                                <img class="img-fluid w-100 rounded" src="~/img/@item.ImagePath" alt="Service Image" style="max-width: 100px;" />
+                            }
+                        </div>
+                        <div class="service-content">
+                            <h4 class="mb-4">@item.Title</h4>
+                            <p class="mb-4">@item.Sdescription</p>
+                            <a href="#" class="btn btn-service rounded-pill py-2 px-4"
+                               data-bs-toggle="modal"
+                               data-bs-target="#serviceModal"
+                               data-title="@item.Title"
+                               data-description="@Html.Raw(item.Description)"
+                               data-image="@Url.Content("~/img/" + item.ImagePath)">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</div>
+<!-- Service End -->
+
+<!-- Feature Start -->
+<div class="container-fluid feature overflow-hidden py-5">
+    <div class="container py-5">
+        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 900px;">
+            <h1 class="mb-1" style="color:#2373AE; font-weight:bold;">Our Features</h1>
+            <h3 class="display-5">Push Your Visitors Into Happy Customers</h3>
+        </div>
+
+        <div class="row g-5 pt-5 align-items-center">
+            <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
+                <div class="feature-img RotateMoveLeft d-flex align-items-center justify-content-center mx-auto"
+                     style="max-width: 100%; height: auto; padding: 0.5rem 1rem 1rem 1rem; transform: translateY(-30px);">
+                    <img src="~/img/our-features.png" class="img-fluid"
+                         style="max-width: 70%; height: auto; object-fit: contain;"
+                         alt="Our Features">
+                </div>
+            </div>
+
+            <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.1s">
+                <h1 class="display-6 mb-4 mt-4">Trusted by Thousands, Valued by All.</h1>
+                <p class="mb-4" style="font-size: 20px;">
+                    Empowering businesses with results-driven strategies and measurable growth.
+                </p>
+                <div class="row g-4">
+                    <div class="col-6">
+                        <div class="d-flex align-items-center">
+                            <img src="~/img/projects-created.png" alt="Projects Created" class="img-fluid" style="max-width: 60px; max-height: 60px;">
+                            <div class="d-flex flex-column ms-3">
+                                <h2 class="mb-0 fw-bold counter" data-target="285">0</h2>
+                                <small class="text-dark">Created Projects</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="d-flex align-items-center">
+                            <img src="~/img/happy-clients.png" alt="Happy Clients" class="img-fluid" style="max-width: 60px; max-height: 60px;">
+                            <div class="d-flex flex-column ms-3">
+                                <h2 class="mb-0 fw-bold counter" data-target="6560">0</h2>
+                                <small class="text-dark">Happy Clients</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- Feature End -->
+
+<!-- FAQ Start -->
+<div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 900px;">
+    <h1 class="mb-1" style="color:#2373AE; font-weight:bold;">FAQ's</h1>
+    <h3 class="display-5 mb-4" style="color:#182536;">Let’s Clear Things Up, The Zyro Way.</h3>
+</div>
+
+<div class="container-fluid FAQ bg-light overflow-hidden py-5">
+    <div class="container py-5">
+        <div class="row g-5 align-items-center">
+            <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
+                <div class="accordion" id="accordionExample">
+@if (Model.FaqList != null && Model.FaqList.Any())
+{
+    var index = 1;
+    foreach (var faq in Model.FaqList)
+    {
+                            var collapseId = $"collapse{index}";
+                            var headingId = $"heading{index}";
+                            bool isFirst = index == 1;
+
+                            <div class="accordion-item border-0 mb-4">
+                                <h2 class="accordion-header" id="@headingId">
+                                    <button class="accordion-button @(isFirst ? "" : "collapsed") rounded-top"
+                                            type="button"
+                                            data-bs-toggle="collapse"
+                                            data-bs-target="#@collapseId"
+                                            aria-expanded="@(isFirst.ToString().ToLower())"
+                                            aria-controls="@collapseId">
+                                        @faq.Title
+                                    </button>
+                                </h2>
+                                <div id="@collapseId" class="accordion-collapse collapse @(isFirst ? "show" : "")"
+                                     aria-labelledby="@headingId"
+                                     data-bs-parent="#accordionExample">
+                                    <div class="accordion-body my-2">
+                                        <p>@faq.Description</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            index++;
+                        }
+                    }
+                    else
+                    {
+                        <p>No FAQs available at the moment.</p>
+                    }
+
+                </div>
+            </div>
+
+            <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.3s">
+                <div class="FAQ-img RotateMoveRight rounded">
+                    <img src="~/img/faqs.png" class="img-fluid w-100" alt="faqs">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- FAQ End -->
+
+
+<!-- Blog End -->
+
+<!-- Testimonial Start -->
+@* <div class="container-fluid testimonial py-5"> *@
+@*     <div class="container py-5"> *@
+@*         <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 900px;"> *@
+@*             <h3 class="mb-1" style="color:#2373AE; font-weight:bold;">Reviews</h3> *@
+@*             <h1 class="display-5 mb-4" style="color:#182536;">What Our Clients Say About Zyro.</h1> *@
+@*         </div> *@
+
+@*      <div class="testimonial-carousel owl-carousel wow zoomInDown" data-wow-delay="0.2s"> *@
+@*     @if (Model.TestimonialList != null && Model.TestimonialList.Any()) *@
+@*     { *@
+@*         foreach (var t in Model.TestimonialList) *@
+@*         { *@
+@*             <div class="testimonial-item" data-dot=""> *@
+@*                 <div class="testimonial-inner text-center p-5"> *@
+@*                     <div class="d-flex align-items-center justify-content-center mb-4"> *@
+@*                         <div class="testimonial-inner-img me-4"  *@
+@*                              style="width: 100px; height: 100px; border-radius: 50%; border: 3px solid #0097fe;"> *@
+@*                             <img src="~/img/review-profile-img.png" class="img-fluid rounded-circle" alt="profile"> *@
+@*                         </div> *@
+@*                         <div> *@
+@*                             <h5 class="mb-2">@t.Name</h5> *@
+@*                             <p class="mb-0">@t.Email</p> *@
+@*                         </div> *@
+@*                     </div> *@
+@*                     <p class="fs-7">@t.Remarks</p> *@
+@*                     <div class="text-center"> *@
+@*                         <div class="d-flex justify-content-center"> *@
+@*                             <i class="fas fa-star text-primary"></i> *@
+@*                             <i class="fas fa-star text-primary"></i> *@
+@*                             <i class="fas fa-star text-primary"></i> *@
+@*                             <i class="fas fa-star text-primary"></i> *@
+@*                             <i class="fas fa-star text-primary"></i> *@
+@*                         </div> *@
+@*                     </div> *@
+@*                 </div> *@
+@*             </div> *@
+@*         } *@
+@*     } *@
+@*     else *@
+@*     { *@
+@*         <p class="text-center">No testimonials available.</p> *@
+@*     } *@
+@* </div> *@
+
+
+@*     </div> *@
+@* </div> *@
+<!-- Testimonial End -->
+
+                            <div class="modal fade" id="serviceModal" tabindex="-1" aria-labelledby="serviceModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content p-3">
+            <div class="modal-header">
+                <h5 class="modal-title" id="serviceModalLabel"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                <img id="modalImage" src="" alt="Service Image" class="img-fluid mb-3" style="max-width: 200px;" />
+                <p id="modalDescription" class="mt-3 text-start"></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+            @section Scripts {
+    <script>
+        $(document).ready(function () {
+            $('#serviceModal').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget);
+                var title = button.data('title');
+                var description = button.data('description');
+                var image = button.data('image');
+
+                var modal = $(this);
+                modal.find('.modal-title').text(title);
+                modal.find('#modalDescription').html(description); // changed to html()
+                modal.find('#modalImage').attr('src', image);
+            });
+        });
+    </script>
+}
+
+
+

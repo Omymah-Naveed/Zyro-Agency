@@ -1,0 +1,209 @@
+﻿@model Zyro.Models.ServiceViewModel
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Service";
+    var userName = Context.Session.GetString("username") ?? "";
+    var userEmail = Context.Session.GetString("useremail") ?? "";
+}
+
+
+<!-- Header Start -->
+<div class="container-fluid bg-breadcrumb">
+    <ul class="breadcrumb-animation">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <div class="container text-center py-3" style="max-width: 900px;">
+
+        <h3 class="display-3 mb-4 wow fadeInDown" data-wow-delay="0.1s">Services</h3>
+        <ol class="breadcrumb justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s" style="font-size:16px;">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item active" style="color:#2373AE;">Services</li>
+            @* <li class="breadcrumb-item"><a asp-controller="User" asp-action="Login">Log In</a></li> *@
+        </ol>
+    </div>
+</div>
+<!-- Header End -->
+<!-- Service Start -->
+<div class="container-fluid service py-5">
+    <div class="container py-5">
+        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 900px;">
+            <h3 class="mb-1" style="color:#2373AE; font-weight:bold;">Our Services</h3>
+            <h1 class="display-5 mb-4" style="color:#182536;">What We Can Do For You</h1>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+            @foreach (var item in Model.ServiceList)
+            {
+                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item text-center rounded p-4">
+                        <div class="service-icon d-inline-block bg-light rounded p-4 mb-4">
+                            @if (!string.IsNullOrEmpty(item.ImagePath))
+                            {
+                                <img class="img-fluid w-100 rounded" src="~/img/@item.ImagePath" alt="Service Image" style="max-width: 100px;" />
+                            }
+                        </div>
+                        <div class="service-content">
+                            <h4 class="mb-4">@item.Title</h4>
+                            <p class="mb-4">@item.Sdescription</p>
+                            <a href="#" class="btn btn-service rounded-pill py-2 px-4"
+                               data-bs-toggle="modal"
+                               data-bs-target="#serviceModal"
+                               data-title="@item.Title"
+                               data-description="@Html.Raw(item.Description)"
+                               data-image="@Url.Content("~/img/" + item.ImagePath)">Read More</a>
+
+                            <form asp-action="Orders" method="post">
+                                <input asp-for="Service" type="hidden" value="@item.Title" />
+                                <input asp-for="Name" type="hidden" value="@userName" />
+                                <input asp-for="Email" type="hidden" value="@userEmail" />
+                                <button type="submit" class="btn rounded-pill py-2 px-4 btn-service"
+                                        onclick="return confirm('Are you sure you want to acquire this service?');">
+                                    Acquire
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</div>
+<!-- Service End -->
+
+<!-- SweetAlert2 Confirmation Script -->
+<script>
+    document.querySelectorAll(".acquire-btn").forEach(btn => {
+        btn.addEventListener("click", function (e) {
+            e.preventDefault(); // Stop form submit
+
+            let form = this.closest("form");
+
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You are about to acquire this service!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#44B1DA',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, acquire it!',
+                cancelButtonText: 'Cancel',
+                customClass: {
+                    confirmButton: 'rounded-pill px-4',
+                    cancelButton: 'rounded-pill px-4'
+                }
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    form.submit();
+                }
+            });
+        });
+    });
+</script>
+
+
+<!-- FAQ Start -->
+<div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 900px;">
+    <h3 class="mb-1" style="color:#2373AE; font-weight:bold;">FAQ's</h3>
+    <h1 class="display-5 mb-4" style="color:#182536;">Let’s Clear Things Up, The Zyro Way.</h1>
+</div>
+
+<div class="container-fluid FAQ bg-light overflow-hidden py-5">
+    <div class="container py-5">
+        <div class="row g-5 align-items-center">
+            <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
+                <div class="accordion" id="accordionExample">
+@if (Model.FaqList != null && Model.FaqList.Any())
+{
+    var index = 1;
+    foreach (var faq in Model.FaqList)
+    {
+                            var collapseId = $"collapse{index}";
+                            var headingId = $"heading{index}";
+                            bool isFirst = index == 1;
+
+                            <div class="accordion-item border-0 mb-4">
+                                <h2 class="accordion-header" id="@headingId">
+                                    <button class="accordion-button @(isFirst ? "" : "collapsed") rounded-top"
+                                            type="button"
+                                            data-bs-toggle="collapse"
+                                            data-bs-target="#@collapseId"
+                                            aria-expanded="@(isFirst.ToString().ToLower())"
+                                            aria-controls="@collapseId">
+                                        @faq.Title
+                                    </button>
+                                </h2>
+                                <div id="@collapseId" class="accordion-collapse collapse @(isFirst ? "show" : "")"
+                                     aria-labelledby="@headingId"
+                                     data-bs-parent="#accordionExample">
+                                    <div class="accordion-body my-2">
+                                        <p>@faq.Description</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            index++;
+                        }
+                    }
+                    else
+                    {
+                        <p>No FAQs available at the moment.</p>
+                    }
+
+                </div>
+            </div>
+
+            <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.3s">
+                <div class="FAQ-img RotateMoveRight rounded">
+                    <img src="~/img/faqs.png" class="img-fluid w-100" alt="faqs">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- FAQ End -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="serviceModal" tabindex="-1" aria-labelledby="serviceModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content p-3">
+            <div class="modal-header">
+                <h5 class="modal-title" id="serviceModalLabel"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                <img id="modalImage" src="" alt="Service Image" class="img-fluid mb-3" style="max-width: 200px;" />
+                <p id="modalDescription" class="mt-3 text-start"></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $('#serviceModal').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget);
+                var title = button.data('title');
+                var description = button.data('description');
+                var image = button.data('image');
+
+                var modal = $(this);
+                modal.find('.modal-title').text(title);
+                modal.find('#modalDescription').html(description); // changed to html()
+                modal.find('#modalImage').attr('src', image);
+            });
+        });
+    </script>
+}

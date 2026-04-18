@@ -1,0 +1,208 @@
+﻿@model Zyro.Models.RegisterationUser
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Signup";
+}
+
+<!-- Header Start -->
+<div class="container-fluid bg-breadcrumb">
+    <ul class="breadcrumb-animation">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <div class="container text-center py-3" style="max-width: 900px;">
+        <h3 class="display-3 mb-4 wow fadeInDown" data-wow-delay="0.1s">Signup</h3>
+        <ol class="breadcrumb justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s" style="font-size:16px;">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item"><a href="/">Services</a></li>
+            <li class="breadcrumb-item active" aria-current="page" style="color: #2373AE;">Signup</li>
+        </ol>
+    </div>
+</div>
+<!-- Header End -->
+
+<!-- Signup Section Start -->
+<div class="container-fluid contact py-5">
+    <div class="container py-5">
+        <div class="row g-5 align-items-center">
+
+            <!-- Signup Form -->
+            <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
+                <div class="bg-white rounded shadow p-5">
+                    <h4 class="text-center mb-4 fw-bold" style="color:#2373AE;">Create Your Account</h4>
+
+                    @if (TempData["ErrorMessageUserSignup"] != null)
+                    {
+                        <div class="alert alert-danger text-center">@TempData["ErrorMessageUserSignup"]</div>
+                    }
+
+                    <form asp-action="Signup" method="post" id="signupForm" novalidate>
+                        <div asp-validation-summary="ModelOnly" class="text-danger text-center"></div>
+
+                        <div class="form-floating mb-4">
+                            <input asp-for="Name" type="text" class="form-control" id="name" placeholder="Full Name" required minlength="3" />
+                            <label asp-for="Name"><i class="fas fa-user me-2"></i> Full Name</label>
+                            <small id="nameError" class="text-danger" style="display:none;">Name must be at least 3 characters.</small>
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-floating mb-4">
+                            <input asp-for="Email" type="email" class="form-control" id="email" placeholder="Email Address" required />
+                            <label asp-for="Email"><i class="fas fa-envelope me-2"></i> Email</label>
+                            <small id="emailError" class="text-danger" style="display:none;">Enter a valid email address.</small>
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-floating mb-4 position-relative">
+                            <input asp-for="Password" id="passwordInput" type="password" class="form-control" placeholder="Password" required minlength="6" maxlength="20" />
+                            <label asp-for="Password"><i class="fas fa-lock me-2"></i> Password</label>
+                            <span class="position-absolute top-50 end-0 translate-middle-y pe-3" onclick="togglePassword()" style="cursor:pointer;">
+                                <i class="fas fa-eye" id="eyeIcon"></i>
+                            </span>
+                            <small id="passwordError" class="text-danger" style="display:none;">Password must be 6–20 characters and include letters & numbers.</small>
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+
+                        <div class="d-grid mb-3">
+                            <button type="submit" class="btn custom-login-btn py-2 rounded-pill">Sign Up</button>
+                        </div>
+
+                        <div class="text-center">
+                            <span class="text-muted">Already have an account?</span>
+                            <a asp-controller="User" asp-action="Login" style="color:#2373AE;">Login</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Marketing Cards -->
+            <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.3s">
+                <div class="d-flex align-items-center mb-4">
+                    <div class="bg-light d-flex align-items-center justify-content-center mb-3"
+                         style="width: 90px; height: 90px; border-radius: 50px;">
+                        <img src="~/img/Seo-loginform.png" alt="Seo" class="img-fluid" style="max-width: 60px; max-height: 60px;">
+                    </div>
+                    <div class="ms-4">
+                        <h4>SEO Optimization</h4>
+                        <p class="mb-0">Improve your website’s visibility and rank higher on search engines.</p>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-center mb-4">
+                    <div class="bg-light d-flex align-items-center justify-content-center mb-3"
+                         style="width: 90px; height: 90px; border-radius: 50px;">
+                        <img src="~/img/social-media-loginform.png" alt="Social Media Marketing" class="img-fluid" style="max-width: 60px; max-height: 60px;">
+                    </div>
+                    <div class="ms-4">
+                        <h4>Social Media Marketing</h4>
+                        <p class="mb-0">Engage your audience and grow your presence across all platforms.</p>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-center mb-4">
+                    <div class="bg-light d-flex align-items-center justify-content-center mb-3"
+                         style="width: 90px; height: 90px; border-radius: 50px;">
+                        <img src="~/img/web-design-loginform.png" alt="Web Design" class="img-fluid" style="max-width: 60px; max-height: 60px;">
+                    </div>
+                    <div class="ms-4">
+                        <h4>Website Design</h4>
+                        <p class="mb-0">Craft intuitive and user-friendly interfaces for better engagement and usability.</p>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-center mb-4">
+                    <div class="bg-light d-flex align-items-center justify-content-center mb-3"
+                         style="width: 90px; height: 90px; border-radius: 50px;">
+                        <img src="~/img/app-development-loginform.png" alt="App Development" class="img-fluid" style="max-width: 60px; max-height: 60px;">
+                    </div>
+                    <div class="ms-4">
+                        <h4>App Development</h4>
+                        <p class="mb-0">Develop fast, responsive mobile apps tailored to your business needs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Signup Section End -->
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        function togglePassword() {
+            var passwordField = document.getElementById("passwordInput");
+            var eyeIcon = document.getElementById("eyeIcon");
+
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                eyeIcon.classList.remove("fa-eye");
+                eyeIcon.classList.add("fa-eye-slash");
+            } else {
+                passwordField.type = "password";
+                eyeIcon.classList.remove("fa-eye-slash");
+                eyeIcon.classList.add("fa-eye");
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const nameInput = document.getElementById("name");
+            const emailInput = document.getElementById("email");
+            const passwordInput = document.getElementById("passwordInput");
+
+            const nameError = document.getElementById("nameError");
+            const emailError = document.getElementById("emailError");
+            const passwordError = document.getElementById("passwordError");
+
+            // Name validation
+            nameInput.addEventListener("input", function () {
+                nameError.style.display = nameInput.value.length >= 3 ? "none" : "block";
+            });
+
+            // Email validation
+            emailInput.addEventListener("input", function () {
+                const regex = /^[^\s@@]+@@[^\s@@]+\.[^\s@@]+$/;
+                emailError.style.display = regex.test(emailInput.value) ? "none" : "block";
+            });
+
+            // Password validation
+            passwordInput.addEventListener("input", function () {
+                const regex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,20}$/;
+                passwordError.style.display = regex.test(passwordInput.value) ? "none" : "block";
+            });
+
+            // Form validation before submit
+            document.getElementById("signupForm").addEventListener("submit", function (e) {
+                let valid = true;
+
+                if (nameInput.value.length < 3) {
+                    nameError.style.display = "block";
+                    valid = false;
+                }
+
+        const emailRegex = /^[^\s@@]+@@[^\s@@]+\.[^\s@@]+$/;
+                                if (!emailRegex.test(emailInput.value)) {
+                    emailError.style.display = "block";
+                    valid = false;
+                }
+
+                const passRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,20}$/;
+                if (!passRegex.test(passwordInput.value)) {
+                    passwordError.style.display = "block";
+                    valid = false;
+                }
+
+                if (!valid) {
+                    e.preventDefault();
+                }
+            });
+        });
+    </script>
+}

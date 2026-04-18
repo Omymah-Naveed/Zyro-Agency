@@ -1,0 +1,434 @@
+﻿/*** Blog Start ***/
+.blog .blog-item {
+    border-radius: 10px;
+    transition: 0.5s;
+    background: var(--bs-light);
+}
+
+    .blog .blog-item:hover {
+        box-shadow: 0 0 45px rgba(0, 0, 0, .2);
+    }
+
+    .blog .blog-item .blog-img {
+        position: relative;
+        overflow: hidden;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+        .blog .blog-item .blog-img::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 0;
+            bottom: 0;
+            left: 0;
+            background: rgba(173, 216, 230, 0.4); /* Light blue overlay */
+            transition: 0.5s;
+        }
+
+    .blog .blog-item:hover .blog-img::after {
+        height: 100%;
+        background: rgba(173, 216, 230, 0.6);
+    }
+
+    .blog .blog-item .blog-img img {
+        transition: 0.5s;
+    }
+
+    .blog .blog-item:hover .blog-img img {
+        transform: scale(1.2);
+    }
+
+    /*** Only Anchor Color Change on Hover ***/
+    .blog .blog-item .blog-content a {
+        color: #2d2c2c;
+        transition: color 0.3s ease;
+        text-decoration: none;
+    }
+
+        .blog .blog-item .blog-content a:hover {
+            color: #235695;
+        }
+
+    .blog .blog-item .blog-content {
+        position: relative;
+        background: var(--bs-light);
+    }
+
+        .blog .blog-item .blog-content .blog-date {
+            position: absolute;
+            top: 0;
+            left: 25px;
+            transform: translateY(-50%);
+            padding: 12px 25px;
+            border-radius: 10px;
+            color: var(--bs-white);
+            background: var(--bs-primary);
+        }
+
+        .blog .blog-item .blog-content .blog-comment {
+            display: flex;
+            justify-content: space-between;
+        }
+
+/* Blog section spacing */
+.container-fluid.blog {
+    padding-bottom: 4rem;
+    margin-bottom: 2rem;
+}
+
+/* Custom Read More Button */
+button.readmore-btn {
+    background-color: #235695;
+    color: #fff;
+    border: 1px solid #235695;
+    border-radius: 50px;
+    padding: 8px 22px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+    button.readmore-btn:hover {
+        background-color: #2373AE;
+        border-color: #2373AE;
+        color: #fff;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    button.readmore-btn i {
+        transition: transform 0.3s ease;
+    }
+
+    button.readmore-btn:hover i {
+        transform: translateX(4px);
+    }
+   
+/*** Blog End ***/
+
+
+/*** Banner Start ***/
+.custom-btn {
+    background-color: #225593;
+    color: #fff !important;
+    border: none;
+    transition: all 0.3s ease-in-out;
+    font-weight: 500;
+}
+
+    .custom-btn:hover {
+        background-color: #44B1DA;
+        color: #fff !important;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+.container-fluid.banner {
+    margin: 2rem 0;
+    padding: 3rem 0;
+}
+
+.banner .banner-item {
+    position: relative;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.5s;
+    z-index: 1;
+}
+
+    .banner .banner-item::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 10px;
+        background: rgba(0, 0, 0, .6);
+        z-index: 2;
+    }
+
+    .banner .banner-item .banner-content {
+        position: absolute;
+        inset: 0;
+        padding: 25px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        text-align: right;
+        z-index: 5;
+    }
+
+        .banner .banner-item .banner-content h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .banner .banner-item .banner-content h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .banner .banner-item .banner-content p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+/* Large Screens */
+@media (min-width: 992px) {
+    .banner .banner-item .banner-content h2 {
+        font-size: 45px;
+    }
+
+    .banner .banner-item .banner-content h1 {
+        font-size: 72px;
+    }
+
+    .banner .banner-item .banner-content p {
+        font-size: 40px;
+    }
+}
+
+/* Tablets */
+@media (max-width: 991px) {
+    .banner .banner-item .banner-content {
+        align-items: center;
+        text-align: center;
+        padding: 15px;
+    }
+
+        .banner .banner-item .banner-content h1 {
+            font-size: 2.5rem;
+        }
+
+        .banner .banner-item .banner-content h2 {
+            font-size: 1.5rem;
+        }
+
+        .banner .banner-item .banner-content p {
+            font-size: 1rem;
+        }
+
+        .banner .banner-item .banner-content h1:nth-of-type(2) {
+            text-align: center !important;
+            margin-right: 0;
+        }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+    .banner .banner-item .banner-content {
+        align-items: center;
+        text-align: center;
+        padding: 10px;
+    }
+
+        .banner .banner-item .banner-content h1 {
+            font-size: 1.8rem;
+        }
+
+        .banner .banner-item .banner-content h2 {
+            font-size: 1.2rem;
+        }
+
+        .banner .banner-item .banner-content p {
+            font-size: 0.9rem;
+        }
+
+    .banner-btn {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        align-items: center;
+    }
+
+        .banner-btn a {
+            width: 90%;
+            max-width: 250px;
+            text-align: center;
+        }
+}
+/*** Banner End ***/
+
+
+/***************** Profile Page Bolgs Css Start***********************/
+/*  Owl Carousel k Nav Buttons */
+.owl-carousel .owl-nav {
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+    z-index: 15;
+    padding: 0 10px;
+}
+
+    .owl-carousel .owl-nav button.owl-prev,
+    .owl-carousel .owl-nav button.owl-next {
+        background: #2373AE !important;
+        color: #fff !important;
+        border-radius: 50%;
+        width: 55px;
+        height: 55px;
+        font-size: 26px;
+        line-height: 55px;
+        pointer-events: all;
+        transition: all 0.3s ease-in-out;
+        box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+        border: none;
+    }
+
+    .owl-carousel .owl-nav button.owl-prev {
+        position: absolute;
+        left: -25px;
+        bottom: 0;
+    }
+
+    .owl-carousel .owl-nav button.owl-next {
+        position: absolute;
+        right: -25px;
+        bottom: 0;
+    }
+
+        /* Hover Effect nex prev indicators k  */
+        .owl-carousel .owl-nav button.owl-prev:hover,
+        .owl-carousel .owl-nav button.owl-next:hover {
+            background: #fff !important;
+            color: #2373AE !important;
+            border: 1px solid #2373AE;
+            transform: scale(1.15);
+        }
+
+    .owl-carousel .owl-nav button:focus {
+        outline: none;
+    }
+
+/* Outer Carousel k Container */
+.owl-carousel.testimonial-carousel {
+    position: relative;
+    min-height: 250px;
+    max-height: 60vh;
+    height: auto;
+    overflow: visible;
+    padding: 15px 0;
+}
+
+    /* Blogs k Card */
+    .owl-carousel.testimonial-carousel .card {
+        height: auto;
+        max-height: 100%;
+        overflow: hidden;
+        padding-bottom: 40px;
+        border: none;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        border-radius: 8px;
+        position: relative;
+    }
+
+    /* Blog Image ka siza */
+    .owl-carousel.testimonial-carousel .card-img-top.blog-img {
+        width: 100%;
+        max-height: 300px;
+        object-fit: cover;
+        border-radius: 6px;
+    }
+
+/* Buttons jo hen Cards k ander */
+.card .btn {
+    min-width: 75px;
+    font-size: 14px;
+    padding: 6px 12px;
+}
+
+/* Spacing between buttons */
+.d-flex.gap-2 > * {
+    margin: 0 4px;
+}
+
+/*blogs tab ka border form shadow (remove)*/
+#blogs.tab-pane {
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    background: transparent !important;
+}
+
+/* baki jitny tabs hen onka border or shadow */
+#profileTabsContent > .tab-pane:not(#blogs) {
+    border: 1px solid #dee2e6;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .owl-carousel .owl-nav button.owl-prev,
+    .owl-carousel .owl-nav button.owl-next {
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+    }
+
+    .owl-carousel .owl-nav {
+        bottom: 40px;
+    }
+
+        .owl-carousel .owl-nav button.owl-prev {
+            left: -10px;
+        }
+
+        .owl-carousel .owl-nav button.owl-next {
+            right: -10px;
+        }
+
+    .owl-carousel.testimonial-carousel {
+        min-height: 200px;
+        padding: 8px 0;
+    }
+
+        .owl-carousel.testimonial-carousel .card-img-top.blog-img {
+            max-height: 240px;
+        }
+}
+
+/*  user details card k ander k border or shadow */
+#profile.tab-pane .card-body {
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    padding: 15px;
+}
+
+/* srif outer card ka border or shadow */
+#profile.tab-pane .card {
+    border: 1px solid #dee2e6 !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05) !important;
+    border-radius: 8px;
+    background: #fff;
+}
+
+/*  Optionally remove border from tab-content wrapper */
+#profileTabsContent {
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+}
+
+/* Edit button ko right side pe kia hy */
+#profile.tab-pane .card-body a.btn-warning {
+    display: inline-block;
+    float: right;
+}
+
+/***************** Profile Page Bolgs Css End ***********************/

@@ -1,0 +1,77 @@
+﻿/* ✅ FAQ Banner Styling */
+.faqs-banner .banner-item {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* ✅ Perfect vertical centering */
+}
+
+    /* ✅ Banner image remains responsive */
+    .faqs-banner .banner-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+    }
+
+    /* ✅ Overlay for readability */
+    .faqs-banner .banner-item::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.2); /* Light overlay */
+        z-index: 1;
+    }
+
+/* ✅ Text block */
+.faqs-banner .banner-content {
+    position: absolute;
+    z-index: 2;
+    width: 80%;
+    max-width: 800px;
+    text-align: center;
+    color: white;
+    padding: 10px;
+}
+
+    /* ✅ Headings */
+    .faqs-banner .banner-content h2 {
+        font-size: clamp(16px, 3vw, 28px);
+        font-family: 'Segoe Script', cursive;
+        font-style: italic;
+        color: #fff;
+    }
+
+    .faqs-banner .banner-content h1 {
+        font-size: clamp(20px, 4vw, 36px);
+        color: #D2E8F5;
+        line-height: 1.2;
+    }
+
+    .faqs-banner .banner-content p {
+        font-size: clamp(14px, 2.5vw, 18px);
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* ✅ Highlight text */
+    .faqs-banner .banner-content .highlight-text {
+        color: #7dcbf5;
+    }
+
+/* ✅ Mobile overlay + better readability */
+@media (max-width: 576px) {
+    .faqs-banner .banner-item::after {
+        background: rgba(0, 0, 0, 0.5); /* darker overlay */
+    }
+
+    .faqs-banner .banner-content {
+        width: 90%;
+        background: rgba(0, 0, 0, 0.3); /* transparent background behind text */
+        border-radius: 5px;
+    }
+}

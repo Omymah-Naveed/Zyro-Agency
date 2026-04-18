@@ -1,0 +1,207 @@
+﻿@model Zyro.Models.Contact
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Contact";
+    var userName = Context.Session.GetString("username") ?? "";
+    var userEmail = Context.Session.GetString("useremail") ?? "";
+}
+
+<style>
+    button.btn.btn-send-msg {
+        background-color: #2373AE !important;
+        color: #fff !important;
+        border: 1px solid #2373AE !important;
+        font-weight: 500;
+        transition: all 0.3s ease;
+    }
+
+        button.btn.btn-send-msg:hover {
+            background-color: #fff !important;
+            color: #2373AE !important;
+            border: 1px solid #2373AE !important;
+        }
+</style>
+
+<!-- Header Start -->
+<div class="container-fluid bg-breadcrumb">
+    <ul class="breadcrumb-animation">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <div class="container text-center py-3" style="max-width: 900px;">
+
+        <h3 class="display-3 mb-4 wow fadeInDown" data-wow-delay="0.1s">Contact Us</h3>
+        <ol class="breadcrumb justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s" style="font-size:16px;">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item active" style="color:#2373AE;">Contact Us</li>
+            @* <li class="breadcrumb-item"><a asp-controller="User" asp-action="Login">Log In</a></li> *@
+        </ol>
+    </div>
+</div>
+<!-- Header End -->
+<!-- Contact Start -->
+<div class="container-fluid contact py-5">
+    <div class="container py-5">
+        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 900px;">
+            <h3 class="mb-1" style="color:#2373AE; font-weight:bold;">Contact Us</h3>
+            <h1 class="display-5 mb-4">Get in touch with us</h1>
+        </div>
+
+        <div class="row g-5 align-items-center">
+            <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
+                @* <h2 class="display-5 mb-2">Our Contact Form</h2> *@
+                @if (TempData["SuccessMessageContact"] != null)
+                {
+                    <div class="alert alert-success alert-dismissible fade show text-center" role="alert">
+                        @TempData["SuccessMessageContact"]
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                }
+
+                <form asp-action="ContactAddData" method="post" id="contactForm" novalidate>
+                    <div class="row g-3">
+                        <div class="col-lg-12 col-xl-6">
+                            <div class="form-floating">
+                                <input asp-for="Name" class="form-control" placeholder="Your Name" value="@userName" readonly />
+                                <label asp-for="Name"></label>
+                                <span asp-validation-for="Name" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12 col-xl-6">
+                            <div class="form-floating">
+                                <input asp-for="Email" class="form-control" placeholder="Your Email" value="@userEmail" readonly />
+                                <label asp-for="Email"></label>
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12 col-xl-6">
+                            <div class="form-floating">
+                                <input asp-for="Phone" class="form-control" id="phone" placeholder="Phone" pattern="^\d{10,15}$" required />
+                                <label asp-for="Phone"></label>
+                                <small class="text-danger" id="phoneError" style="display:none;">Enter a valid phone number (10-15 digits).</small>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12 col-xl-6">
+                            <div class="form-floating">
+                                <input asp-for="Project" class="form-control" id="project" placeholder="Project" required minlength="5" />
+                                <label asp-for="Project"></label>
+                                <small class="text-danger" id="projectError" style="display:none;">Project name must be at least 5 characters.</small>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <input asp-for="Subject" class="form-control" id="subject" placeholder="Subject" required minlength="5" />
+                                <label asp-for="Subject"></label>
+                                <small class="text-danger" id="subjectError" style="display:none;">Subject must be at least 5 characters long.</small>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <textarea asp-for="Message" class="form-control" id="message" style="height: 160px" placeholder="Message" required minlength="10" maxlength="250"></textarea>
+                                <label asp-for="Message">
+                                    Message <small id="charCount" class="text-muted">(250 characters remaining)</small>
+                                </label>
+                                <small class="text-danger" id="messageError" style="display: none;">Message must be between 10 and 250 characters.</small>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-send-msg w-100 py-3">Send Message</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Google Maps Iframe -->
+            <div class="col-lg-6 wow fadeInRight d-flex justify-content-center" data-wow-delay="0.3s">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d760.6249064157931!2d67.03495592842846!3d24.926543686715974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33f90157042d3%3A0x93d609e8bec9a880!2sAptech%20Computer%20Education%20North%20Nazimabad%20Center!5e0!3m2!1sen!2s!4v1754261182429!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Contact End -->
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const phoneInput = document.getElementById("phone");
+            const projectInput = document.getElementById("project");
+            const subjectInput = document.getElementById("subject");
+            const messageInput = document.getElementById("message");
+
+            const phoneError = document.getElementById("phoneError");
+            const projectError = document.getElementById("projectError");
+            const subjectError = document.getElementById("subjectError");
+            const messageError = document.getElementById("messageError");
+            const charCount = document.getElementById("charCount");
+
+            // Phone validation
+            phoneInput.addEventListener("input", function () {
+                const regex = /^\d{10,15}$/;
+                phoneError.style.display = regex.test(phoneInput.value) ? "none" : "block";
+            });
+
+            // Project validation
+            projectInput.addEventListener("input", function () {
+                projectError.style.display = projectInput.value.length >= 5 ? "none" : "block";
+            });
+
+            // Subject validation
+            subjectInput.addEventListener("input", function () {
+                subjectError.style.display = subjectInput.value.length >= 5 ? "none" : "block";
+            });
+
+            // Message validation and counter
+            messageInput.addEventListener("input", function () {
+                const len = messageInput.value.length;
+                const remaining = 250 - len;
+                charCount.textContent = `${remaining} characters remaining`;
+                messageError.style.display = (len < 10 || len > 250) ? "block" : "none";
+            });
+
+            // Form validation before submit
+            document.getElementById("contactForm").addEventListener("submit", function (e) {
+                let valid = true;
+
+                if (!/^\d{10,15}$/.test(phoneInput.value)) {
+                    phoneError.style.display = "block";
+                    valid = false;
+                }
+
+                if (projectInput.value.length < 5) {
+                    projectError.style.display = "block";
+                    valid = false;
+                }
+
+                if (subjectInput.value.length < 5) {
+                    subjectError.style.display = "block";
+                    valid = false;
+                }
+
+                const msgLen = messageInput.value.length;
+                if (msgLen < 10 || msgLen > 250) {
+                    messageError.style.display = "block";
+                    valid = false;
+                }
+
+                if (!valid) {
+                    e.preventDefault();
+                }
+            });
+        });
+    </script>
+}

@@ -1,0 +1,10 @@
+﻿/* Change input focus border and shadow */
+.form-control:focus {
+    border-color: #87CEFA; /* Light Sky Blue */
+    box-shadow: 0 0 0 0.25rem rgba(135, 206, 250, 0.25); /* Light blue shadow */
+}
+
+/* Optional: change floating label color when input is focused */
+.form-floating > .form-control:focus ~ label {
+    color: black;
+}

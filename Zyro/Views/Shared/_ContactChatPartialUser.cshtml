@@ -1,0 +1,217 @@
+﻿@model ContactChatViewModel
+@{
+    Layout = "_Layout";
+}
+
+
+<style>
+    /* Send button custom style */
+    .btn-send {
+        background-color: #2373AC !important;
+        border: 1px solid #2373AC !important;
+        border-radius: 50% !important;
+        width: 40px !important;
+        height: 40px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 0 !important;
+        transition: all 0.3s ease !important;
+    }
+
+        .btn-send i {
+            color: #fff !important;
+            font-size: 16px !important;
+        }
+
+        .btn-send:hover {
+            background-color: #fff !important;
+            border: 1px solid #2373AC !important;
+        }
+
+            .btn-send:hover i {
+                color: #2373AC !important;
+            }
+
+    .modal-title {
+        /* margin-top: 3%; */
+        font-size:35px;
+        
+        
+    }
+</style>
+
+
+<!-- Header Start -->
+<div class="container-fluid bg-breadcrumb">
+    <ul class="breadcrumb-animation">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <div class="container text-center py-5" style="max-width: 900px;">
+        <h3 class="display-3 mb-4 wow fadeInDown" data-wow-delay="0.1s">Chat with Admin</h3>
+        <ol class="breadcrumb justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
+            <li class="breadcrumb-item"><a asp-controller="User" asp-action="Index">Home</a></li>
+            <li class="breadcrumb-item"><a asp-controller="User" asp-action="Profile">Profile</a></li>
+            <li class="breadcrumb-item active" style="color:#2373AE;">Chat</li>
+        </ol>
+    </div>
+</div>
+<!-- Header End -->
+
+
+
+
+<div class="container-fluid">
+    <div class="row">
+        <!-- Left Side: Chat -->
+        <div class="col-md-7 mb-4" style="padding-left: 30px;">
+            <div class="modal-content shadow">
+                <!-- Modal Header -->
+                <div class="modal-header justify-content-center">
+                    <h5 class="modal-title">Chat</h5>
+                </div>
+
+                <!-- Modal Body -->
+                <div class="modal-body p-0 d-flex flex-column" style="height: 500px;">
+                    <!-- Search & Date Filter -->
+                    <div class="p-2 bg-light border-bottom">
+                        <div class="row g-2 align-items-center">
+                            <div class="col-12 col-md-5">
+                                <input type="text" id="searchInput" class="form-control" placeholder="🔍 Search messages...">
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <input type="date" id="dateFilter" class="form-control">
+                            </div>
+                            <div class="col-12 col-md-3">
+                                <button id="clearFilters" class="btn btn-outline-success w-100">
+                                    <i class="fas fa-times"></i> Clear
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="chatMessages" class="flex-grow-1 p-3 overflow-auto" style="background-color: #f8f9fa;">
+                        @foreach (var msg in Model.Messages)
+                        {
+                            var isAdmin = string.Equals(msg.SenderType ?? "", "admin", StringComparison.OrdinalIgnoreCase);
+
+                            <div class="chat-message mb-3" data-message="@(msg.MessageContent?.ToLower() ?? "")" data-date="@(msg.MessageDate?.ToString("yyyy-MM-dd") ?? "")">
+                                <div class="d-flex @(isAdmin ? "justify-content-start" : "justify-content-end")">
+                                    <div>
+                                        <div class="p-2 rounded shadow-sm"
+                                             style="max-width: 70%; background-color:@(isAdmin ? "#44B0D9" : "#e9ecef"); color:@(isAdmin ? "white" : "black"); border-radius: 12px;">
+                                            <div class="fw-bold small mb-1">
+                                                @(msg.SenderType is not null && msg.SenderType.Length > 0
+                                                    ? char.ToUpper(msg.SenderType[0]) + msg.SenderType.Substring(1).ToLower()
+                                                    : "")
+                                            </div>
+                                            <div class="message-text"> @(msg.MessageContent ?? "") </div>
+                                        </div>
+
+                                        <div class="text-muted small mt-1 @(isAdmin ? "" : "text-end")" style="font-size: 0.75em; font-style: italic;">
+                                            @(msg.MessageDate?.ToString("dd MMM yyyy hh:mm tt") ?? "")
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+
+
+                    <!-- Message Input -->
+                    <div class="p-2 border-top bg-white">
+                        <form asp-action="SendContactReply" method="post" class="d-flex">
+                            <input type="hidden" name="contactId" value="@Model.ContactId" />
+                            <input type="text" name="message" class="form-control me-2" placeholder="Type a reply..." required />
+                            <button type="submit" class="btn btn-send">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side: Image -->
+       <div class="col-md-5 d-flex align-items-center justify-content-center mb-5">
+    <img src="~/img/ChatWithAdmin.png"
+         alt="Chat Illustration"
+         class="img-fluid rounded shadow"
+         style="max-height: 600px; width: auto; object-fit: contain; background: transparent;">
+</div>
+    </div>
+</div>
+@section Scripts {
+    <script>
+        const searchInput = document.getElementById("searchInput");
+        const dateFilter = document.getElementById("dateFilter");
+        const clearFilters = document.getElementById("clearFilters");
+        const chatMessagesContainer = document.getElementById("chatMessages");
+        const contactId = @Model.ContactId;
+
+        // Highlight function
+        function highlightMatch(text, term) {
+            if (!term) return text;
+            const regex = new RegExp(`(${term})`, "gi");
+            return text.replace(regex, '<mark style="background:yellow;">$1</mark>');
+        }
+
+        // Apply filters
+        function applyFilters() {
+            const searchTerm = searchInput.value.toLowerCase();
+            const selectedDate = dateFilter.value; // yyyy-MM-dd
+            const messages = document.querySelectorAll(".chat-message");
+
+            messages.forEach(msg => {
+                const messageTextElem = msg.querySelector(".message-text");
+                const originalText = messageTextElem.textContent;
+                const textMatch = originalText.toLowerCase().includes(searchTerm);
+                const dateMatch = !selectedDate || msg.dataset.date === selectedDate; // ✅ exact match with normalized date
+
+                messageTextElem.innerHTML = highlightMatch(originalText, searchTerm);
+                msg.style.display = (textMatch && dateMatch) ? "block" : "none";
+            });
+        }
+
+        // Scroll helpers
+        function scrollToBottom() {
+            chatMessagesContainer.scrollTop = chatMessagesContainer.scrollHeight;
+        }
+
+        // Event listeners
+        clearFilters.addEventListener("click", () => {
+            searchInput.value = "";
+            dateFilter.value = "";
+            applyFilters();
+        });
+        searchInput.addEventListener("input", applyFilters);
+        dateFilter.addEventListener("change", applyFilters);
+
+        // Reload messages with AJAX
+        function reloadMessages() {
+            $.get(`/User/ViewContactChat?contactId=${contactId}`, function (data) {
+                const newMessagesHtml = $(data).find("#chatMessages").html();
+                if (newMessagesHtml) {
+                    $("#chatMessages").html(newMessagesHtml);
+                    applyFilters();
+                    scrollToBottom(); // ✅ always scroll after reload
+                }
+            });
+        }
+
+        // Auto reload every 5s
+        setInterval(reloadMessages, 5000);
+
+        // Initial scroll to bottom
+        scrollToBottom();
+    </script>
+}

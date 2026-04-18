@@ -1,0 +1,190 @@
+﻿@model Zyro.Models.BlogDetailsViewModel
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "BlogDetails";
+    var userName = Context.Session.GetString("username") ?? "";
+    var userEmail = Context.Session.GetString("useremail") ?? "";
+}
+
+<style>
+    /* Blog Content Image */
+    .blog-detail-img {
+        width: 100%;
+        height: auto;
+        max-height: 400px; /* Optional: limit height */
+        object-fit: contain; /* prevent cropping */
+        border-radius: 10px;
+    }
+
+    /* Blog Title */
+    .blog-detail-title {
+        font-size: 28px;
+        font-weight: 600;
+        margin-top: 15px;
+    }
+
+    /* Meta Info */
+    .blog-meta {
+        font-size: 14px;
+        color: #555;
+        margin-bottom: 15px;
+    }
+
+        .blog-meta i {
+            color: #2373AE;
+            margin-right: 6px;
+        }
+
+    /* Blog Description */
+    .blog-description {
+        font-size: 18px;
+        line-height: 1.7;
+        color: #333;
+    }
+
+    /* Comments Section */
+    .comment-box {
+        background: #f9f9f9;
+        border-radius: 10px;
+        padding: 20px;
+    }
+
+        .comment-box h4 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+    /* Individual Comment */
+    .comment-item {
+        padding-bottom: 12px;
+        margin-bottom: 12px;
+        border-bottom: 1px solid #eee;
+    }
+
+        .comment-item strong {
+            font-size: 15px;
+            color: #2373AE;
+        }
+
+        .comment-item small {
+            display: block;
+            color: #777;
+            font-size: 13px;
+        }
+
+    /* Comment Form */
+    .comment-form h5 {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 15px;
+    }
+
+    .comment-form textarea {
+        resize: none;
+        font-size: 15px;
+    }
+
+    .btn-submit-comment {
+        background-color: #2373AE !important;
+        color: #fff !important;
+        border: 1px solid #2373AE !important;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        border-radius: 30px;
+    }
+
+        .btn-submit-comment:hover {
+            background-color: #fff !important;
+            color: #2373AE !important;
+            border: 1px solid #2373AE !important;
+        }
+
+        .btn-submit-comment:focus {
+            outline: none !important;
+            box-shadow: 0 0 0 3px #43B0D8 !important;
+            border-color: #43B0D8 !important;
+        }
+</style>
+
+<!-- Header Start -->
+<div class="container-fluid bg-breadcrumb">
+    <div class="container text-center py-3" style="max-width: 900px;">
+        <h3 class="display-3 mb-4">Blog Details</h3>
+        <ol class="breadcrumb justify-content-center mb-0" style="font-size:16px;">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item"><a href="/Blog">Blogs</a></li>
+            <li class="breadcrumb-item active" style="color:#2373AE;">Details</li>
+        </ol>
+    </div>
+</div>
+<!-- Header End -->
+<!-- Blog Details Start -->
+<div class="container pt-4 pb-5">
+    <div class="row g-5 align-items-start">
+
+        <!-- Left Side: Blog Content -->
+        <div class="col-lg-8">
+            <div class="mb-4">
+                <img src="~/img/blogspic.png" class="blog-detail-img" alt="Blog Image" />
+
+                <h2 class="blog-detail-title">@Model.Blog.Title</h2>
+
+                <div class="blog-meta">
+                    <i class="fa fa-user"></i> @Model.Blog.Name
+                    &nbsp;
+                </div>
+
+                <p class="blog-description">
+                    @Model.Blog.Description
+                </p>
+            </div>
+        </div>
+
+        <!-- Right Side: Comments + Form -->
+        <div class="col-lg-4">
+            <div class="comment-box shadow-sm">
+
+                <h4>Comments (@Model.Comments?.Count)</h4>
+
+                <!-- Render comments -->
+                @if (Model.Comments != null && Model.Comments.Any())
+                {
+                    <div>
+                        @foreach (var c in Model.Comments)
+                        {
+                            <div class="comment-item">
+                                <strong>@c.Name</strong>
+                                <small>@c.CommentDate?.ToString("dd MMM yyyy")</small>
+                                <p class="mb-1">@c.CommentText</p>
+                            </div>
+                        }
+                    </div>
+                }
+                else
+                {
+                    <p class="text-muted">No comments yet. Be the first to comment!</p>
+                }
+
+                <!-- Add Comment Form -->
+                <div class="comment-form mt-4">
+                    <h5>Add a Comment</h5>
+                    <form asp-action="AddComment" asp-controller="User" method="post">
+                        <input type="hidden" name="blogId" value="@Model.Blog.Id" />
+                        <input type="hidden" name="Name" value="@userName" asp-for="Name" />
+                        <input type="hidden" name="Email" value="@userEmail" asp-for="Email" />
+                        <input type="hidden" name="parentCommentId" value="" id="parentCommentId" />
+
+                        <div class="mb-3">
+                            <textarea name="commentText" class="form-control" rows="4" placeholder="Write your comment..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-submit-comment px-4">Submit</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- Blog Details End -->

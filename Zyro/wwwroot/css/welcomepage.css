@@ -1,0 +1,159 @@
+﻿button.btn-success {
+    font-weight: 500;
+}
+
+    button.btn-success:hover {
+        background-color: white !important;
+        color: #000 !important; /* dark text */
+        border: 1px solid darkgreen !important; /* green border */
+    }
+
+/* welcome page css */
+
+/* General spacing and typography */
+.container {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h2.fw-bold {
+    font-size: 2rem;
+    letter-spacing: -0.5px;
+}
+
+/* Card styling */
+.card {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    border-radius: 0.75rem; /* rounded corners */
+}
+
+    .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    }
+
+/* Step icons */
+.card-body .fs-3 {
+    min-width: 40px;
+    text-align: center;
+}
+
+/* Badge adjustments */
+.badge {
+    font-size: 0.75rem;
+    padding: 0.35em 0.6em;
+    border-radius: 0.5rem;
+}
+
+/* Save Profile Button */
+.btn-save {
+    background-color: #225594;
+    border: none;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+    .btn-save:hover {
+        background-color: #fff;
+        color: #225594;
+        border: 1px solid #225594;
+    }
+
+/* Success buttons (inside modals) */
+button.btn-success {
+    transition: all 0.3s ease;
+}
+
+    button.btn-success:hover {
+        background-color: #fff !important;
+        color: #000 !important;
+        border: 1px solid darkgreen !important;
+    }
+
+/* Modals */
+.modal-content {
+    border-radius: 1rem;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+
+.modal-header {
+    border-bottom: none;
+    padding-bottom: 0.5rem;
+}
+
+.modal-footer {
+    border-top: none;
+    padding-top: 0.5rem;
+}
+
+/* About Website cards */
+.card.text-center i {
+    transition: transform 0.3s ease;
+}
+
+.card.text-center:hover i {
+    transform: scale(1.15);
+}
+
+/* Small text muted adjustments */
+.text-muted.small {
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+/* Welcome Header */
+.welcome-header {
+    background: linear-gradient(135deg, #2373AC 0%, #3a6fa8 100%);
+    border-radius: 0 0 1.5rem 1.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+    .welcome-header h1 {
+        font-size: 2.2rem;
+        letter-spacing: -0.5px;
+        color: white;
+    }
+
+    .welcome-header p {
+        font-size: 1.1rem;
+        opacity: 0.9;
+        color: white;
+    }
+
+/* Feature Cards */
+.feature-card {
+    background-color: #2373AC;
+    color: #fff; /* white text for contrast */
+    border-radius: 0.75rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .feature-card i {
+        color: #fff; /* icons white */
+    }
+
+    .feature-card p {
+        font-size: 0.9rem;
+        opacity: 0.95; /* slightly softer white */
+    }
+
+    .feature-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+    }
+
+/* ============================= */
+/* Welcome Banner Responsive Fix */
+/* ============================= */
+.welcome-banner {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Mobile adjustment */
+@media (max-width: 768px) {
+    .welcome-banner {
+        background-size: contain; /* image cut nahi hogi */
+        background-color: #f8f9fa; /* extra space ko fill karega */
+    }
+}

@@ -1,0 +1,1629 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\Zyro.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Zyro.1vnov4pz10.bundle.scp.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\css\\adminform.css",
+      "PackagePath": "staticwebassets\\css\\adminform.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\css\\blog.css",
+      "PackagePath": "staticwebassets\\css\\blog.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\css\\faqs.css",
+      "PackagePath": "staticwebassets\\css\\faqs.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\css\\forms.css",
+      "PackagePath": "staticwebassets\\css\\forms.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\css\\profile.css",
+      "PackagePath": "staticwebassets\\css\\profile.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\css\\singlepageheader.css",
+      "PackagePath": "staticwebassets\\css\\singlepageheader.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\css\\style.css",
+      "PackagePath": "staticwebassets\\css\\style.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\css\\user_style.css",
+      "PackagePath": "staticwebassets\\css\\user_style.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\css\\welcomepage.css",
+      "PackagePath": "staticwebassets\\css\\welcomepage.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\1ffe6000-33c2-4710-a18a-8c68782305c2.png",
+      "PackagePath": "staticwebassets\\img\\1ffe6000-33c2-4710-a18a-8c68782305c2.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\29d8374b-9ffe-4abf-addb-1035fb239f71.png",
+      "PackagePath": "staticwebassets\\img\\29d8374b-9ffe-4abf-addb-1035fb239f71.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\356c73a5-6be9-4d62-a56c-c0dfd78a7c9b.png",
+      "PackagePath": "staticwebassets\\img\\356c73a5-6be9-4d62-a56c-c0dfd78a7c9b.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\5829de58-b8c7-470c-bd80-0ffd194390d9.png",
+      "PackagePath": "staticwebassets\\img\\5829de58-b8c7-470c-bd80-0ffd194390d9.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\693bf30e-045f-46ce-84d1-a7811f6d0284.png",
+      "PackagePath": "staticwebassets\\img\\693bf30e-045f-46ce-84d1-a7811f6d0284.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\796e6d63-c17d-4f85-b4bc-c318a813e938.png",
+      "PackagePath": "staticwebassets\\img\\796e6d63-c17d-4f85-b4bc-c318a813e938.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\9c4e2d04-caf5-4feb-bb8a-ff69882b130f.png",
+      "PackagePath": "staticwebassets\\img\\9c4e2d04-caf5-4feb-bb8a-ff69882b130f.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\ChatWithAdmin.png",
+      "PackagePath": "staticwebassets\\img\\ChatWithAdmin.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\Seo-loginform.png",
+      "PackagePath": "staticwebassets\\img\\Seo-loginform.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\about-1.png",
+      "PackagePath": "staticwebassets\\img\\about-1.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\about-banner-video.mp4",
+      "PackagePath": "staticwebassets\\img\\about-banner-video.mp4"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\aboutsection.png",
+      "PackagePath": "staticwebassets\\img\\aboutsection.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\aboutus-img.png",
+      "PackagePath": "staticwebassets\\img\\aboutus-img.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\active-employees.png",
+      "PackagePath": "staticwebassets\\img\\active-employees.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\active-policies.png",
+      "PackagePath": "staticwebassets\\img\\active-policies.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\active-services.png",
+      "PackagePath": "staticwebassets\\img\\active-services.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\add_blog-banner.png",
+      "PackagePath": "staticwebassets\\img\\add_blog-banner.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\admin-pic.png",
+      "PackagePath": "staticwebassets\\img\\admin-pic.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\admin-pick-blogs.png",
+      "PackagePath": "staticwebassets\\img\\admin-pick-blogs.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\app-development-loginform.png",
+      "PackagePath": "staticwebassets\\img\\app-development-loginform.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\app-development.png",
+      "PackagePath": "staticwebassets\\img\\app-development.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\bannerimg-1.png",
+      "PackagePath": "staticwebassets\\img\\bannerimg-1.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\blog-1.png",
+      "PackagePath": "staticwebassets\\img\\blog-1.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\blog-2.png",
+      "PackagePath": "staticwebassets\\img\\blog-2.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\blog-3.png",
+      "PackagePath": "staticwebassets\\img\\blog-3.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\blog-4.png",
+      "PackagePath": "staticwebassets\\img\\blog-4.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\blogspic.png",
+      "PackagePath": "staticwebassets\\img\\blogspic.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\c5ef4152-0074-46e6-ac31-c7a22db64937.png",
+      "PackagePath": "staticwebassets\\img\\c5ef4152-0074-46e6-ac31-c7a22db64937.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\completed-orders.png",
+      "PackagePath": "staticwebassets\\img\\completed-orders.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\contact-banner.png",
+      "PackagePath": "staticwebassets\\img\\contact-banner.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\data-share.png",
+      "PackagePath": "staticwebassets\\img\\data-share.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\de813e82-1f07-4b27-917a-4d801b85ae6a.png",
+      "PackagePath": "staticwebassets\\img\\de813e82-1f07-4b27-917a-4d801b85ae6a.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\edit-profile.png",
+      "PackagePath": "staticwebassets\\img\\edit-profile.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\editBlogBanner.png",
+      "PackagePath": "staticwebassets\\img\\editBlogBanner.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\email-marketing.png",
+      "PackagePath": "staticwebassets\\img\\email-marketing.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\f7c475c6-2f25-4508-8482-f06266373955.png",
+      "PackagePath": "staticwebassets\\img\\f7c475c6-2f25-4508-8482-f06266373955.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\faqs.png",
+      "PackagePath": "staticwebassets\\img\\faqs.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\faqs_banner.png",
+      "PackagePath": "staticwebassets\\img\\faqs_banner.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\features-1.png",
+      "PackagePath": "staticwebassets\\img\\features-1.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\happy-clients.png",
+      "PackagePath": "staticwebassets\\img\\happy-clients.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\hero-img-1.png",
+      "PackagePath": "staticwebassets\\img\\hero-img-1.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\heroimg.png",
+      "PackagePath": "staticwebassets\\img\\heroimg.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\hidden-blogs.png",
+      "PackagePath": "staticwebassets\\img\\hidden-blogs.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\hidden-faqs.png",
+      "PackagePath": "staticwebassets\\img\\hidden-faqs.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\how-we-use-info.png",
+      "PackagePath": "staticwebassets\\img\\how-we-use-info.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\inactive-employees.png",
+      "PackagePath": "staticwebassets\\img\\inactive-employees.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\inactive-policies.png",
+      "PackagePath": "staticwebassets\\img\\inactive-policies.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\inactive-service.png",
+      "PackagePath": "staticwebassets\\img\\inactive-service.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\info-collection.png",
+      "PackagePath": "staticwebassets\\img\\info-collection.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\inprogress-orders.png",
+      "PackagePath": "staticwebassets\\img\\inprogress-orders.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\logo.png",
+      "PackagePath": "staticwebassets\\img\\logo.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\logo2.png",
+      "PackagePath": "staticwebassets\\img\\logo2.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\logobg.png",
+      "PackagePath": "staticwebassets\\img\\logobg.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\our-features.png",
+      "PackagePath": "staticwebassets\\img\\our-features.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\pay-per-click.png",
+      "PackagePath": "staticwebassets\\img\\pay-per-click.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\privacypolicy1.png",
+      "PackagePath": "staticwebassets\\img\\privacypolicy1.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\projects-created.png",
+      "PackagePath": "staticwebassets\\img\\projects-created.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\published-blogs.png",
+      "PackagePath": "staticwebassets\\img\\published-blogs.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\review-profile-img.png",
+      "PackagePath": "staticwebassets\\img\\review-profile-img.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\role.png",
+      "PackagePath": "staticwebassets\\img\\role.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\security.png",
+      "PackagePath": "staticwebassets\\img\\security.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\seo.png",
+      "PackagePath": "staticwebassets\\img\\seo.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\social-media-loginform.png",
+      "PackagePath": "staticwebassets\\img\\social-media-loginform.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\social-media-marketing.png",
+      "PackagePath": "staticwebassets\\img\\social-media-marketing.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\sty-1.png",
+      "PackagePath": "staticwebassets\\img\\sty-1.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\testimonial-img-1.jpg",
+      "PackagePath": "staticwebassets\\img\\testimonial-img-1.jpg"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\testimonial-img-2.jpg",
+      "PackagePath": "staticwebassets\\img\\testimonial-img-2.jpg"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\testimonial-img-3.jpg",
+      "PackagePath": "staticwebassets\\img\\testimonial-img-3.jpg"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\total-blogs.png",
+      "PackagePath": "staticwebassets\\img\\total-blogs.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\total-employees.png",
+      "PackagePath": "staticwebassets\\img\\total-employees.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\total-faqs.png",
+      "PackagePath": "staticwebassets\\img\\total-faqs.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\total-orders.png",
+      "PackagePath": "staticwebassets\\img\\total-orders.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\total-polices.png",
+      "PackagePath": "staticwebassets\\img\\total-polices.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\total-services.png",
+      "PackagePath": "staticwebassets\\img\\total-services.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\total-users.png",
+      "PackagePath": "staticwebassets\\img\\total-users.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\visible-faqs.png",
+      "PackagePath": "staticwebassets\\img\\visible-faqs.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\wave-hand.png",
+      "PackagePath": "staticwebassets\\img\\wave-hand.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\web-design-loginform.png",
+      "PackagePath": "staticwebassets\\img\\web-design-loginform.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\web-design.png",
+      "PackagePath": "staticwebassets\\img\\web-design.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\img\\welcome-banner.svg",
+      "PackagePath": "staticwebassets\\img\\welcome-banner.svg"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\js\\counter.js",
+      "PackagePath": "staticwebassets\\js\\counter.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\js\\main.js",
+      "PackagePath": "staticwebassets\\js\\main.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\js\\profile.js",
+      "PackagePath": "staticwebassets\\js\\profile.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\js\\user_main.js",
+      "PackagePath": "staticwebassets\\js\\user_main.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\animate\\animate.css",
+      "PackagePath": "staticwebassets\\lib\\animate\\animate.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\animate\\animate.min.css",
+      "PackagePath": "staticwebassets\\lib\\animate\\animate.min.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\animate\\animate.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\animate\\animate.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\animate\\animate.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\animate\\animate.min.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\bootstrap"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\chart\\chart.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\chart\\chart.min.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\counterup\\counterup.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\counterup\\counterup.min.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\easing\\easing.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\easing\\easing.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\easing\\easing.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\easing\\easing.min.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\isotope\\isotope.pkgd.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\isotope\\isotope.pkgd.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\isotope\\isotope.pkgd.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\isotope\\isotope.pkgd.min.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\lightbox\\css\\lightbox.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\lightbox\\css\\lightbox.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\lightbox\\css\\lightbox.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\lightbox\\css\\lightbox.min.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\lightbox\\images\\close.png",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\lightbox\\images\\close.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\lightbox\\images\\loading.gif",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\lightbox\\images\\loading.gif"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\lightbox\\images\\next.png",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\lightbox\\images\\next.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\lightbox\\images\\prev.png",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\lightbox\\images\\prev.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\lightbox\\js\\lightbox.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\lightbox\\js\\lightbox.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\lightbox\\js\\lightbox.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\lightbox\\js\\lightbox.min.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\lightbox\\links.php",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\lightbox\\links.php"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\owlcarousel\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\owlcarousel"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\owlcarousel\\assets\\ajax-loader.gif",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\owlcarousel\\assets\\ajax-loader.gif"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\owlcarousel\\assets\\owl.carousel.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\owlcarousel\\assets\\owl.carousel.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\owlcarousel\\assets\\owl.carousel.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\owlcarousel\\assets\\owl.carousel.min.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\owlcarousel\\assets\\owl.theme.default.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\owlcarousel\\assets\\owl.theme.default.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\owlcarousel\\assets\\owl.theme.default.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\owlcarousel\\assets\\owl.theme.default.min.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\owlcarousel\\assets\\owl.theme.green.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\owlcarousel\\assets\\owl.theme.green.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\owlcarousel\\assets\\owl.theme.green.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\owlcarousel\\assets\\owl.theme.green.min.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\owlcarousel\\assets\\owl.video.play.png",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\owlcarousel\\assets\\owl.video.play.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\owlcarousel\\owl.carousel.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\owlcarousel\\owl.carousel.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\owlcarousel\\owl.carousel.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\owlcarousel\\owl.carousel.min.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\tempusdominus\\css\\tempusdominus-bootstrap-4.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\tempusdominus\\css\\tempusdominus-bootstrap-4.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\tempusdominus\\css\\tempusdominus-bootstrap-4.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\tempusdominus\\css\\tempusdominus-bootstrap-4.min.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\tempusdominus\\js\\moment-timezone.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\tempusdominus\\js\\moment-timezone.min.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\tempusdominus\\js\\moment.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\tempusdominus\\js\\moment.min.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\tempusdominus\\js\\tempusdominus-bootstrap-4.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\tempusdominus\\js\\tempusdominus-bootstrap-4.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\tempusdominus\\js\\tempusdominus-bootstrap-4.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\tempusdominus\\js\\tempusdominus-bootstrap-4.min.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\waypoints\\links.php",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\waypoints\\links.php"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\waypoints\\waypoints.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\waypoints\\waypoints.min.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\wow\\wow.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\wow\\wow.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\bootstrap\\wow\\wow.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\wow\\wow.min.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\chart\\chart.min.js",
+      "PackagePath": "staticwebassets\\lib\\chart\\chart.min.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\counterup\\counterup.min.js",
+      "PackagePath": "staticwebassets\\lib\\counterup\\counterup.min.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\easing\\easing.js",
+      "PackagePath": "staticwebassets\\lib\\easing\\easing.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\easing\\easing.min.js",
+      "PackagePath": "staticwebassets\\lib\\easing\\easing.min.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\isotope\\isotope.pkgd.js",
+      "PackagePath": "staticwebassets\\lib\\isotope\\isotope.pkgd.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\isotope\\isotope.pkgd.min.js",
+      "PackagePath": "staticwebassets\\lib\\isotope\\isotope.pkgd.min.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\jquery\\dist\\jquery.slim.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.slim.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\jquery\\dist\\jquery.slim.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.slim.min.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\jquery\\dist\\jquery.slim.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.slim.min.map"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\lightbox\\css\\lightbox.css",
+      "PackagePath": "staticwebassets\\lib\\lightbox\\css\\lightbox.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\lightbox\\css\\lightbox.min.css",
+      "PackagePath": "staticwebassets\\lib\\lightbox\\css\\lightbox.min.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\lightbox\\images\\close.png",
+      "PackagePath": "staticwebassets\\lib\\lightbox\\images\\close.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\lightbox\\images\\loading.gif",
+      "PackagePath": "staticwebassets\\lib\\lightbox\\images\\loading.gif"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\lightbox\\images\\next.png",
+      "PackagePath": "staticwebassets\\lib\\lightbox\\images\\next.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\lightbox\\images\\prev.png",
+      "PackagePath": "staticwebassets\\lib\\lightbox\\images\\prev.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\lightbox\\js\\lightbox.js",
+      "PackagePath": "staticwebassets\\lib\\lightbox\\js\\lightbox.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\lightbox\\js\\lightbox.min.js",
+      "PackagePath": "staticwebassets\\lib\\lightbox\\js\\lightbox.min.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\lightbox\\links.php",
+      "PackagePath": "staticwebassets\\lib\\lightbox\\links.php"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\owlcarousel\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\owlcarousel"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\owlcarousel\\assets\\ajax-loader.gif",
+      "PackagePath": "staticwebassets\\lib\\owlcarousel\\assets\\ajax-loader.gif"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\owlcarousel\\assets\\owl.carousel.css",
+      "PackagePath": "staticwebassets\\lib\\owlcarousel\\assets\\owl.carousel.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\owlcarousel\\assets\\owl.carousel.min.css",
+      "PackagePath": "staticwebassets\\lib\\owlcarousel\\assets\\owl.carousel.min.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\owlcarousel\\assets\\owl.theme.default.css",
+      "PackagePath": "staticwebassets\\lib\\owlcarousel\\assets\\owl.theme.default.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\owlcarousel\\assets\\owl.theme.default.min.css",
+      "PackagePath": "staticwebassets\\lib\\owlcarousel\\assets\\owl.theme.default.min.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\owlcarousel\\assets\\owl.theme.green.css",
+      "PackagePath": "staticwebassets\\lib\\owlcarousel\\assets\\owl.theme.green.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\owlcarousel\\assets\\owl.theme.green.min.css",
+      "PackagePath": "staticwebassets\\lib\\owlcarousel\\assets\\owl.theme.green.min.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\owlcarousel\\assets\\owl.video.play.png",
+      "PackagePath": "staticwebassets\\lib\\owlcarousel\\assets\\owl.video.play.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\owlcarousel\\owl.carousel.js",
+      "PackagePath": "staticwebassets\\lib\\owlcarousel\\owl.carousel.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\owlcarousel\\owl.carousel.min.js",
+      "PackagePath": "staticwebassets\\lib\\owlcarousel\\owl.carousel.min.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\tempusdominus\\css\\tempusdominus-bootstrap-4.css",
+      "PackagePath": "staticwebassets\\lib\\tempusdominus\\css\\tempusdominus-bootstrap-4.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\tempusdominus\\css\\tempusdominus-bootstrap-4.min.css",
+      "PackagePath": "staticwebassets\\lib\\tempusdominus\\css\\tempusdominus-bootstrap-4.min.css"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\tempusdominus\\js\\moment-timezone.min.js",
+      "PackagePath": "staticwebassets\\lib\\tempusdominus\\js\\moment-timezone.min.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\tempusdominus\\js\\moment.min.js",
+      "PackagePath": "staticwebassets\\lib\\tempusdominus\\js\\moment.min.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\tempusdominus\\js\\tempusdominus-bootstrap-4.js",
+      "PackagePath": "staticwebassets\\lib\\tempusdominus\\js\\tempusdominus-bootstrap-4.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\tempusdominus\\js\\tempusdominus-bootstrap-4.min.js",
+      "PackagePath": "staticwebassets\\lib\\tempusdominus\\js\\tempusdominus-bootstrap-4.min.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\waypoints\\links.php",
+      "PackagePath": "staticwebassets\\lib\\waypoints\\links.php"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\waypoints\\waypoints.min.js",
+      "PackagePath": "staticwebassets\\lib\\waypoints\\waypoints.min.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\wow\\wow.js",
+      "PackagePath": "staticwebassets\\lib\\wow\\wow.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\lib\\wow\\wow.min.js",
+      "PackagePath": "staticwebassets\\lib\\wow\\wow.min.js"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\profile_images\\0373c4f4-cbd5-46ff-8b57-1a2670d5e716.png",
+      "PackagePath": "staticwebassets\\profile_images\\0373c4f4-cbd5-46ff-8b57-1a2670d5e716.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\profile_images\\056abbea-3b96-4cc3-94db-62449eae02cd.jpg",
+      "PackagePath": "staticwebassets\\profile_images\\056abbea-3b96-4cc3-94db-62449eae02cd.jpg"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\profile_images\\0cdad763-adcd-4331-b3a0-31e678904299.png",
+      "PackagePath": "staticwebassets\\profile_images\\0cdad763-adcd-4331-b3a0-31e678904299.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\profile_images\\18b846be-d504-4a37-b213-860312db377a.jpg",
+      "PackagePath": "staticwebassets\\profile_images\\18b846be-d504-4a37-b213-860312db377a.jpg"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\profile_images\\2113994b-3de3-422f-9fd2-27be20c5bc8d.png",
+      "PackagePath": "staticwebassets\\profile_images\\2113994b-3de3-422f-9fd2-27be20c5bc8d.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\profile_images\\29a85bb9-70da-4e3a-97c3-54e6767ef17f.png",
+      "PackagePath": "staticwebassets\\profile_images\\29a85bb9-70da-4e3a-97c3-54e6767ef17f.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\profile_images\\36dc46ef-1e71-4acc-af13-c49386e0a55d.png",
+      "PackagePath": "staticwebassets\\profile_images\\36dc46ef-1e71-4acc-af13-c49386e0a55d.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\profile_images\\36f64855-1b87-4d4e-a812-499f34011b0c.png",
+      "PackagePath": "staticwebassets\\profile_images\\36f64855-1b87-4d4e-a812-499f34011b0c.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\profile_images\\3c240aa9-cb3b-4c65-9091-7db4dc017ffc.jpg",
+      "PackagePath": "staticwebassets\\profile_images\\3c240aa9-cb3b-4c65-9091-7db4dc017ffc.jpg"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\profile_images\\5824cabc-7314-4626-8d1b-edca8790aded.jpg",
+      "PackagePath": "staticwebassets\\profile_images\\5824cabc-7314-4626-8d1b-edca8790aded.jpg"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\profile_images\\5ede762b-85e1-498b-b6ab-9b56fa3aa494.png",
+      "PackagePath": "staticwebassets\\profile_images\\5ede762b-85e1-498b-b6ab-9b56fa3aa494.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\profile_images\\680d4964-3574-4114-8f60-85c3681c61a9.png",
+      "PackagePath": "staticwebassets\\profile_images\\680d4964-3574-4114-8f60-85c3681c61a9.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\profile_images\\77ced0f6-4ec0-4c4f-bdd6-549d1f790291.jpg",
+      "PackagePath": "staticwebassets\\profile_images\\77ced0f6-4ec0-4c4f-bdd6-549d1f790291.jpg"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\profile_images\\7e071ab9-0126-43a3-88f4-16b478ead4c7.jpg",
+      "PackagePath": "staticwebassets\\profile_images\\7e071ab9-0126-43a3-88f4-16b478ead4c7.jpg"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\profile_images\\8dec49b0-781f-4894-8e18-1fb39318f129.png",
+      "PackagePath": "staticwebassets\\profile_images\\8dec49b0-781f-4894-8e18-1fb39318f129.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\profile_images\\9711b4d2-06bb-4731-9a88-c12b8037d450.jpg",
+      "PackagePath": "staticwebassets\\profile_images\\9711b4d2-06bb-4731-9a88-c12b8037d450.jpg"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\profile_images\\a05964f1-158c-4ac7-92d0-c59cdca71e8c.png",
+      "PackagePath": "staticwebassets\\profile_images\\a05964f1-158c-4ac7-92d0-c59cdca71e8c.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\profile_images\\b0e9f8d5-40fe-4881-91e4-d7d3f808079a.png",
+      "PackagePath": "staticwebassets\\profile_images\\b0e9f8d5-40fe-4881-91e4-d7d3f808079a.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\profile_images\\b7b1efeb-c209-435e-837c-f937d7ed2bfe.jpg",
+      "PackagePath": "staticwebassets\\profile_images\\b7b1efeb-c209-435e-837c-f937d7ed2bfe.jpg"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\profile_images\\b860bcd8-22e7-4c3b-9f3a-218bf47f836d.png",
+      "PackagePath": "staticwebassets\\profile_images\\b860bcd8-22e7-4c3b-9f3a-218bf47f836d.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\profile_images\\d62d2a97-c63e-4686-8de8-cb63b0daa120.jpg",
+      "PackagePath": "staticwebassets\\profile_images\\d62d2a97-c63e-4686-8de8-cb63b0daa120.jpg"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\profile_images\\d696f514-e3d3-42dc-af6e-1d8ce72b2236.jpg",
+      "PackagePath": "staticwebassets\\profile_images\\d696f514-e3d3-42dc-af6e-1d8ce72b2236.jpg"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\profile_images\\e512713a-bc2d-48c2-ae46-dc2f2157a243.png",
+      "PackagePath": "staticwebassets\\profile_images\\e512713a-bc2d-48c2-ae46-dc2f2157a243.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\profile_images\\f1e9bc67-cd64-4a66-9149-d81eac7ab30a.png",
+      "PackagePath": "staticwebassets\\profile_images\\f1e9bc67-cd64-4a66-9149-d81eac7ab30a.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\profile_images\\f78eac40-5b0c-4a77-81c1-87cbf216d1f0.png",
+      "PackagePath": "staticwebassets\\profile_images\\f78eac40-5b0c-4a77-81c1-87cbf216d1f0.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\profile_images\\fa6bd962-56de-43e5-a99d-967448ef506b.png",
+      "PackagePath": "staticwebassets\\profile_images\\fa6bd962-56de-43e5-a99d-967448ef506b.png"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\_accordion.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_accordion.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\_alert.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_alert.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\_badge.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_badge.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\_breadcrumb.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_breadcrumb.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\_button-group.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_button-group.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\_buttons.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_buttons.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\_card.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_card.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\_carousel.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_carousel.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\_close.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_close.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\_containers.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_containers.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\_dropdown.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_dropdown.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\_forms.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_forms.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\_functions.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_functions.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\_grid.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_grid.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\_helpers.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_helpers.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\_images.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_images.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\_list-group.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_list-group.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\_mixins.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_mixins.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\_modal.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_modal.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\_nav.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_nav.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\_navbar.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_navbar.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\_offcanvas.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_offcanvas.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\_pagination.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_pagination.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\_popover.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_popover.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\_progress.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_progress.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\_reboot.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_reboot.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\_root.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_root.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\_spinners.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_spinners.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\_tables.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_tables.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\_toasts.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_toasts.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\_tooltip.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_tooltip.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\_transitions.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_transitions.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\_type.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_type.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\_utilities.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_utilities.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\_variables.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_variables.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\bootstrap-grid.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\bootstrap-grid.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\bootstrap-reboot.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\bootstrap-reboot.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\bootstrap-utilities.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\bootstrap-utilities.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\bootstrap.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\bootstrap.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\forms\\_floating-labels.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\forms\\_floating-labels.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\forms\\_form-check.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\forms\\_form-check.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\forms\\_form-control.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\forms\\_form-control.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\forms\\_form-range.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\forms\\_form-range.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\forms\\_form-select.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\forms\\_form-select.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\forms\\_form-text.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\forms\\_form-text.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\forms\\_input-group.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\forms\\_input-group.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\forms\\_labels.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\forms\\_labels.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\forms\\_validation.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\forms\\_validation.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\helpers\\_clearfix.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\helpers\\_clearfix.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\helpers\\_colored-links.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\helpers\\_colored-links.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\helpers\\_position.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\helpers\\_position.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\helpers\\_ratio.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\helpers\\_ratio.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\helpers\\_stretched-link.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\helpers\\_stretched-link.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\helpers\\_text-truncation.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\helpers\\_text-truncation.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\helpers\\_visually-hidden.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\helpers\\_visually-hidden.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_alert.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_alert.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_border-radius.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_border-radius.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_box-shadow.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_box-shadow.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_breakpoints.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_breakpoints.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_buttons.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_buttons.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_caret.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_caret.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_clearfix.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_clearfix.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_color-scheme.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_color-scheme.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_container.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_container.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_deprecate.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_deprecate.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_forms.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_forms.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_gradients.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_gradients.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_grid.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_grid.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_image.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_image.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_list-group.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_list-group.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_lists.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_lists.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_pagination.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_pagination.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_reset-text.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_reset-text.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_resize.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_resize.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_table-variants.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_table-variants.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_text-truncate.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_text-truncate.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_transition.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_transition.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_utilities.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_utilities.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_visually-hidden.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_visually-hidden.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_api.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\utilities\\_api.scss"
+    },
+    {
+      "Id": "D:\\WebSites\\Zyro\\Zyro\\wwwroot\\scss\\bootstrap\\scss\\vendor\\_rfs.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\vendor\\_rfs.scss"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.Zyro.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.Zyro.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.build.Zyro.props",
+      "PackagePath": "build\\Zyro.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildMultiTargeting.Zyro.props",
+      "PackagePath": "buildMultiTargeting\\Zyro.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildTransitive.Zyro.props",
+      "PackagePath": "buildTransitive\\Zyro.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

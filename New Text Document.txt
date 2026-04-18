@@ -1,0 +1,15 @@
+Scaffold-DbContext "Data Source=DESKTOP-8UKM9E6\SQLEXPRESS;Initial Catalog=Zyro;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False" Microsoft.EntityFrameworkCore.SqlServer -ContextDir Data -OutputDir Models -f
+
+Scaffold-DbContext 'Server=.;Initial Catalog=Zyro;Persist Security Info=False;User ID=sa;Password=aptech;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=True;Connection Timeout=30;' Microsoft.EntityFrameworkCore.SqlServer -ContextDir Data -OutputDir Models -f
+
+"dbcs": "Data Source=DESKTOP-8UKM9E6\\SQLEXPRESS;Initial Catalog=Zyro;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"
+
+Scaffold-DbContext 'Server=.;Initial Catalog=LoginRegister;Persist Security Info=False;User ID=sa;Password=aptech;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=True;Connection Timeout=30;' Microsoft.EntityFrameworkCore.SqlServer -ContextDir Data -OutputDir Models 
+
+
+
+
+admin mein profile ka kaam
+admin ka login show ho kitni baar karchuka hy wo us kay baad admin ka proper edit wala kaam employee or admin ka freeze wala kaam bhi karna hy search bar implement karni hy admin panel or usky baad notifications wala kaam bhi karna us pr time ki limit lgani hy us kay baad login and logout ki notification wala bhi kaam karna hy 
+blog wala read ka kaam or comment wala kaam
+index page kay sary read waly kaam

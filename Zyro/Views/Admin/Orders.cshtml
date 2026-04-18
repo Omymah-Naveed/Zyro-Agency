@@ -1,0 +1,378 @@
+﻿@model OrderViewModel
+
+@{
+    Layout = "_LayoutAdmin";
+    ViewData["Title"] = "Orders";
+}
+
+<style>
+
+    body {
+        background-color: var(--light);
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    /* Stats Cards */
+    .stat-card {
+        background: #fff;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        transition: transform 0.2s ease-in-out;
+    }
+
+        .stat-card:hover {
+            transform: translateY(-4px);
+        }
+
+    .stat-icon {
+        font-size: 32px;
+        color: var(--primary);
+    }
+
+    .stat-value {
+        font-size: 22px;
+        font-weight: 600;
+        color: var(--dark);
+    }
+
+    .stat-label {
+        font-size: 14px;
+        color: gray;
+    }
+
+    /* Toolbar */
+    .toolbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 25px 0;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+
+
+    /* Table */
+    .table-card {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        padding: 15px;
+        margin-top: 20px;
+    }
+
+
+    .badge-status {
+        border-radius: 30px;
+        padding: 6px 12px;
+        font-size: 13px;
+        font-weight: 500;
+    }
+
+    .badge-completed {
+        background: rgba(0, 176, 80, 0.15);
+        color: #008000;
+    }
+
+
+    /* for "Pending" */
+    .badge-pending {
+        background: rgba(255, 193, 7, 0.15); /* soft yellow */
+        color: #b8860b; /* golden brown */
+        border: 1px solid #ffcd39;
+    }
+
+    .badge-inprogress {
+        background: rgba(0, 123, 255, 0.15); /* soft blue */
+        color: #0d6efd; /* bootstrap primary blue */
+        border: 1px solid #66b0ff;
+    }
+
+    /* ---------------------------------------------------------------- */
+    /* 🔹 Dropdown Button */
+    .custom-dropdown-btn {
+        font-weight: 500;
+        border-radius: 8px;
+        padding: 6px 14px;
+        background-color: #f8f9fa;
+        transition: all 0.3s ease;
+    }
+
+        .custom-dropdown-btn:hover {
+            background-color: #e9f4fb;
+            border-color: #44B0D9;
+            color: #235695;
+        }
+
+    /* 🔹 Dropdown Menu */
+    .custom-dropdown-menu {
+        border-radius: 10px;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+        padding: 6px 0;
+        border: none;
+        min-width: 180px;
+    }
+
+        /* 🔹 Dropdown Items */
+        .custom-dropdown-menu .dropdown-item {
+            padding: 10px 16px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #333;
+            transition: all 0.2s ease;
+            border-radius: 6px;
+            margin: 2px 6px;
+        }
+
+            /* Hover + Focus */
+            .custom-dropdown-menu .dropdown-item:hover,
+            .custom-dropdown-menu .dropdown-item:focus {
+                background-color: #44B0D9 !important;
+                color: #fff !important;
+            }
+
+            /* Active State */
+            .custom-dropdown-menu .dropdown-item.active,
+            .custom-dropdown-menu .dropdown-item:active {
+                background-color: #44B0D9 !important;
+                color: #fff !important;
+            }
+
+            /* ❌ Delete special */
+            .custom-dropdown-menu .dropdown-item.text-danger:hover {
+                background-color: #dc3545 !important;
+                color: #fff !important;
+            }
+    /* ---------------------------------------------------------------- */
+
+    /* stats icons */
+
+    .stat-icon-img {
+        width: 40px; /* pehle icons jitna */
+        height: 40px;
+        object-fit: contain; /* taake image stretch na ho */
+    }
+
+  
+</style>
+
+@if (Model.OrdersList == null || !Model.OrdersList.Any())
+{
+    <div class="alert alert-warning text-center mt-4">No orders found.</div>
+}
+else
+{
+    <!-- Stats -->
+    <div class="row g-3">
+        <div class="col-md-3">
+            <div class="stat-card">
+                <div>
+                    <div class="stat-value">@Model.OrdersList.Count()</div>
+                    <div class="stat-label">Total Orders</div>
+                </div>
+                <img src="/img/total-orders.png" alt="Total Orders" class="stat-icon-img" />
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="stat-card">
+                <div>
+                    <div class="stat-value">@Model.OrdersList.Count(o => o.Status == "In Progress")</div>
+                    <div class="stat-label">In Progress</div>
+                </div>
+                <img src="/img/inprogress-orders.png" alt="In Progress Orders" class="stat-icon-img" />
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="stat-card">
+                <div>
+                    <div class="stat-value">@Model.OrdersList.Count(o => o.Status == "Completed")</div>
+                    <div class="stat-label">Completed</div>
+                </div>
+                <img src="/img/completed-orders.png" alt="Completed Orders" class="stat-icon-img" />
+            </div>
+        </div>
+    </div>
+
+    <!-- Toolbar -->
+    <div class="toolbar">
+        <div class="input-group w-50">
+            <span class="input-group-text bg-white"><i class="bi bi-search"></i></span>
+            <input type="text" class="form-control" placeholder="Search orders by name or service..." />
+        </div>
+        <div>
+            <select class="form-select filter-dropdown d-inline-block w-auto">
+                <option value="">Filter by Status</option>
+                <option>In Progress</option>
+                <option>Completed</option>
+                <option>Pending</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Tabs -->
+    <ul class="nav nav-tabs" id="orderTabs" role="tablist">
+        <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tableView">Table View</button></li>
+        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#cardView">Card View</button></li>
+    </ul>
+
+    <div class="tab-content">
+        <!-- Table View -->
+        <div class="tab-pane fade show active" id="tableView">
+            <div class="table-card">
+                <div class="table-responsive">
+                    <table class="table align-middle">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Service</th>
+                                <th>Order Date</th>
+                                <th>Meeting Date</th>
+                                <th>Meeting Time</th>
+                                <th>Meeting Text</th>
+                                <th>Status</th>
+                                <th class="text-center">Manage</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var order in Model.OrdersList)
+                            {
+                                <tr>
+                                    <td>@order.Id</td>
+                                    <td>@order.Name</td>
+                                    <td>@order.Email</td>
+                                    <td>@order.Service</td>
+                                    <td>@order.OrderDate</td>
+                                    <td>@order.Date</td>
+                                    <td>@order.Time</td>
+                                    <td>@order.MeetingText</td>
+                                    <td>
+                                        @if (order.Status == "Completed")
+                                        {
+                                            <span class="badge badge-status badge-completed">Completed</span>
+                                        }
+                                        else if (order.Status == "In Progress")
+                                        {
+                                            <span class="badge badge-status badge-inprogress">In Progress</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge badge-status badge-pending">Pending</span>
+                                        }
+                                    </td>
+                                    <td class="text-center">
+                                        <div class="dropdown">
+                                            <button class="btn btn-sm btn-light border dropdown-toggle custom-dropdown-btn" type="button" data-bs-toggle="dropdown">
+                                                Manage
+                                            </button>
+                                            <ul class="dropdown-menu custom-dropdown-menu">
+                                                <li>
+                                                    <form asp-action="UpdateOrdersStatusOne" method="post" class="m-0">
+                                                        <input type="hidden" name="id" value="@order.Id" />
+                                                        <button type="submit" class="dropdown-item">In Progress</button>
+                                                    </form>
+                                                </li>
+                                                <li>
+                                                    <form asp-action="UpdateOrdersStatusTwo" method="post" class="m-0">
+                                                        <input type="hidden" name="id" value="@order.Id" />
+                                                        <button type="submit" class="dropdown-item">Completed</button>
+                                                    </form>
+                                                </li>
+                                                <li>
+                                                    <a asp-action="Meeting" asp-route-id="@order.Id" class="dropdown-item">Meeting Request</a>
+                                                </li>
+                                                <li>
+                                                    <form asp-action="DeleteOrders" method="post" class="m-0" onsubmit="return confirm('Delete this order?');">
+                                                        <input type="hidden" name="id" value="@order.Id" />
+                                                        <button type="submit" class="dropdown-item text-danger">Delete</button>
+                                                    </form>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card View -->
+        <div class="tab-pane fade" id="cardView">
+            <div class="row mt-3">
+                @foreach (var order in Model.OrdersList)
+                {
+                    <div class="col-md-4 mb-4">
+                        <div class="stat-card">
+                            <div>
+                                <div class="fw-bold">@order.Name</div>
+                                <div class="text-muted small">@order.Email</div>
+                                <div class="text-muted small">Service: @order.Service</div>
+                                <div class="text-muted small">Date: @order.OrderDate</div>
+                            </div>
+                            <div>
+                                @if (order.Status == "Completed")
+                                {
+                                    <span class="badge bg-success">Completed</span>
+                                }
+                                else if (order.Status == "In Progress")
+                                {
+                                    <span class="badge bg-warning text-dark">In Progress</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-secondary">Pending</span>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+}
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const searchInput = document.querySelector(".toolbar input[type='text']");
+        const filterSelect = document.querySelector(".toolbar select");
+
+        function filterOrders() {
+            const searchValue = searchInput.value.toLowerCase();
+            const filterValue = filterSelect.value.toLowerCase();
+
+            // Table filtering
+            document.querySelectorAll("#tableView tbody tr").forEach(row => {
+                const name = row.querySelector("td:nth-child(2)")?.textContent.toLowerCase() || "";
+                const service = row.querySelector("td:nth-child(4)")?.textContent.toLowerCase() || "";
+                const status = row.querySelector(".badge")?.textContent.toLowerCase() || "";
+
+                const matchesSearch = name.includes(searchValue) || service.includes(searchValue);
+                const matchesFilter = !filterValue || status.includes(filterValue);
+
+                row.style.display = (matchesSearch && matchesFilter) ? "" : "none";
+            });
+
+            // Card filtering
+            document.querySelectorAll("#cardView .col-md-4").forEach(card => {
+                const name = card.querySelector(".fw-bold")?.textContent.toLowerCase() || "";
+                const service = card.querySelector(".text-muted")?.textContent.toLowerCase() || "";
+                const status = card.querySelector(".badge")?.textContent.toLowerCase() || "";
+
+                const matchesSearch = name.includes(searchValue) || service.includes(searchValue);
+                const matchesFilter = !filterValue || status.includes(filterValue);
+
+                card.style.display = (matchesSearch && matchesFilter) ? "" : "none";
+            });
+        }
+
+        searchInput.addEventListener("keyup", filterOrders);
+        filterSelect.addEventListener("change", filterOrders);
+    });
+</script>

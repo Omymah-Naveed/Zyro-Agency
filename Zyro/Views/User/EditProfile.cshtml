@@ -1,0 +1,239 @@
+﻿@model Zyro.Models.ProfileViewModel
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Edit Profile";
+    var userName = Context.Session.GetString("username") ?? "";
+    var userEmail = Context.Session.GetString("useremail") ?? "";
+}
+
+<style>
+    button.btn.btn-update-profile {
+        background-color: #2373AE !important;
+        color: #fff !important;
+        border: 1px solid #2373AE !important;
+        font-weight: 500;
+        transition: all 0.3s ease;
+    }
+
+        button.btn.btn-update-profile:hover {
+            background-color: #fff !important;
+            color: #2373AE !important;
+            border: 1px solid #2373AE !important;
+        }
+
+    /* Active Tab Style */
+    .nav-pills .nav-link.active {
+        background-color: #235695 !important;
+        color: #fff !important;
+        font-weight: 500;
+        border-radius: 0.5rem;
+    }
+
+    /* Inactive Tab Style */
+    .nav-pills .nav-link {
+        color: #235695;
+        font-weight: 500;
+        border-radius: 0.5rem;
+        transition: all 0.3s ease;
+    }
+
+        /* Hover Effect */
+        .nav-pills .nav-link:hover {
+            background-color: rgba(35, 86, 149, 0.1);
+            color: #235695;
+        }
+
+
+    /* Target only the In Complete button */
+    button.btn.btn-success {
+        font-weight: 500;
+    }
+
+
+    /* Target only the In Complete button */
+    button.btn.btn-success:hover {
+        background-color: white !important;
+        color: #000 !important; /* dark text */
+        border: 1px solid darkgreen !important; /* green border */
+        font-weight:500;
+    }
+</style>
+
+<!-- Header -->
+<div class="container-fluid bg-breadcrumb">
+    <ul class="breadcrumb-animation">
+        @for (int i = 0; i < 10; i++)
+        {
+            <li></li>
+        }
+    </ul>
+    <div class="container text-center py-5" style="max-width: 900px;">
+        <h3 class="display-3 mb-4 wow fadeInDown">Edit Profile</h3>
+        <ol class="breadcrumb justify-content-center mb-0 wow fadeInDown" style="font-size:16px;">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item"><a asp-controller="User" asp-action="Profile">My Profile</a></li>
+            <li class="breadcrumb-item active" style="color:#2373AE;">Edit Profile</li>
+        </ol>
+    </div>
+</div>
+
+<!-- Tabs Layout -->
+<div class="container mt-5 mb-5">
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <div class="card shadow-lg border-0 rounded-3">
+                <div class="card-header bg-white border-bottom-0">
+                    <ul class="nav nav-pills nav-fill rounded bg-light p-1">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-bs-toggle="tab" href="#edit"><i class="fas fa-edit me-1"></i>Edit Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#password"><i class="fas fa-lock me-1"></i>Change Password</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-body tab-content p-4">
+
+                    <!-- Edit Profile -->
+                    <div class="tab-pane fade show active" id="edit">
+                        <form method="post" asp-controller="User" asp-action="EditProfile" enctype="multipart/form-data" class="row g-3">
+                            <input type="hidden" asp-for="Id" />
+                            <div class="col-md-6">
+                                <label class="form-label">Name</label>
+                                <input class="form-control" value="@userName" readonly />
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Email</label>
+                                <input class="form-control" value="@userEmail" readonly />
+                            </div>
+                            <div class="col-md-6">
+                                <label asp-for="City" class="form-label"></label>
+                                <input asp-for="City" class="form-control" />
+                                <span asp-validation-for="City" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6">
+                                <label asp-for="Age" class="form-label"></label>
+                                <input asp-for="Age" class="form-control" />
+                                <span asp-validation-for="Age" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-12">
+                                <label class="form-label">Profile Picture</label>
+                                <input type="file" name="ProfileImage" class="form-control" />
+                            </div>
+                            <div class="col-12 text-end">
+                                <button type="submit" class="btn btn-update-profile px-4">Save Changes</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Change Password -->
+                    <div class="tab-pane fade" id="password">
+                        <form method="post" asp-action="ChangePassword" id="changePasswordForm" novalidate class="row g-3">
+                            <input type="hidden" asp-for="Id" />
+
+                            <!-- Current Password -->
+                            <div class="col-12">
+                                <label class="form-label">Current Password</label>
+                                <div class="input-group">
+                                    <input type="password" name="CurrentPassword" id="currentPassword" class="form-control" required />
+                                    <span class="input-group-text" onclick="togglePassword('currentPassword','eyeIconCurrent')" style="cursor:pointer;">
+                                        <i class="fas fa-eye" id="eyeIconCurrent"></i>
+                                    </span>
+                                </div>
+                                <small id="currentPasswordError" class="text-danger d-none">Please enter your current password.</small>
+                            </div>
+
+                            <!-- New Password -->
+                            <div class="col-12">
+                                <label class="form-label">New Password</label>
+                                <div class="input-group">
+                                    <input type="password" name="NewPassword" id="newPassword" class="form-control" required minlength="6" maxlength="20" />
+                                    <span class="input-group-text" onclick="togglePassword('newPassword','eyeIconNew')" style="cursor:pointer;">
+                                        <i class="fas fa-eye" id="eyeIconNew"></i>
+                                    </span>
+                                </div>
+                                <small id="newPasswordError" class="text-danger d-none">Password must be 6–20 chars, include letters & numbers.</small>
+                            </div>
+
+                            <!-- Confirm Password -->
+                            <div class="col-12">
+                                <label class="form-label">Confirm Password</label>
+                                <div class="input-group">
+                                    <input type="password" name="ConfirmPassword" id="confirmPassword" class="form-control" required />
+                                    <span class="input-group-text" onclick="togglePassword('confirmPassword','eyeIconConfirm')" style="cursor:pointer;">
+                                        <i class="fas fa-eye" id="eyeIconConfirm"></i>
+                                    </span>
+                                </div>
+                                <small id="confirmPasswordError" class="text-danger d-none">Passwords do not match.</small>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <div class="col-12 text-end">
+                                <button type="submit" class="btn btn-success px-4">
+                                    <i class="fas fa-check me-1"></i>Update Password
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        function togglePassword(inputId, eyeIconId) {
+            var passwordField = document.getElementById(inputId);
+            var eyeIcon = document.getElementById(eyeIconId);
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                eyeIcon.classList.replace("fa-eye", "fa-eye-slash");
+            } else {
+                passwordField.type = "password";
+                eyeIcon.classList.replace("fa-eye-slash", "fa-eye");
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const currentPassword = document.getElementById("currentPassword");
+            const newPassword = document.getElementById("newPassword");
+            const confirmPassword = document.getElementById("confirmPassword");
+            const currentPasswordError = document.getElementById("currentPasswordError");
+            const newPasswordError = document.getElementById("newPasswordError");
+            const confirmPasswordError = document.getElementById("confirmPasswordError");
+            const passRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,20}$/;
+
+            newPassword.addEventListener("input", function () {
+                newPasswordError.classList.toggle("d-none", passRegex.test(newPassword.value));
+            });
+
+            confirmPassword.addEventListener("input", function () {
+                confirmPasswordError.classList.toggle("d-none", newPassword.value === confirmPassword.value);
+            });
+
+            document.getElementById("changePasswordForm").addEventListener("submit", function (e) {
+                let valid = true;
+                if (currentPassword.value.trim() === "") {
+                    currentPasswordError.classList.remove("d-none");
+                    valid = false;
+                } else currentPasswordError.classList.add("d-none");
+
+                if (!passRegex.test(newPassword.value)) {
+                    newPasswordError.classList.remove("d-none");
+                    valid = false;
+                }
+
+                if (newPassword.value !== confirmPassword.value) {
+                    confirmPasswordError.classList.remove("d-none");
+                    valid = false;
+                }
+
+                if (!valid) e.preventDefault();
+            });
+        });
+    </script>
+}

@@ -1,0 +1,650 @@
+﻿@model BlogViewModel
+
+@{
+    Layout = "_LayoutAdmin";
+    ViewData["Title"] = "Blog";
+}
+
+<style>
+
+
+    body {
+        background-color: var(--light);
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    /* Stats Cards */
+    .stat-card {
+        background: #fff;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        transition: transform 0.2s ease-in-out;
+    }
+
+        .stat-card:hover {
+            transform: translateY(-4px);
+        }
+
+    .stat-icon {
+        font-size: 32px;
+        color: var(--primary);
+    }
+
+    .stat-value {
+        font-size: 22px;
+        font-weight: 600;
+        color: var(--dark);
+    }
+
+    .stat-label {
+        font-size: 14px;
+        color: gray;
+    }
+
+    /* Toolbar */
+    .toolbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 25px 0;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    /* Table / Cards */
+    .table-card {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        padding: 15px;
+        margin-top: 20px;
+    }
+
+    .blog-info {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        text-align: left;
+    }
+
+    .blog-title {
+        font-weight: 600;
+        color: var(--dark);
+    }
+
+    .blog-meta {
+        font-size: 12px;
+        color: gray;
+    }
+
+
+    .badge-status {
+        border-radius: 30px;
+        padding: 6px 12px;
+        font-size: 13px;
+        font-weight: 500;
+    }
+
+    .badge-publish {
+        background: rgba(0, 176, 80, 0.15);
+        color: #008000;
+    }
+
+    .badge-hide {
+        background: rgba(255, 0, 0, 0.15);
+        color: #b30000;
+    }
+
+    /* for "Selected" */
+    .badge-selected {
+        background: rgba(255, 193, 7, 0.15); /* soft yellow */
+        color: #b8860b; /* golden brown */
+        border: 1px solid #ffcd39;
+    }
+
+    /* for "No" */
+    .badge-no {
+        background: rgba(108, 117, 125, 0.15); /* soft gray */
+        color: #495057;
+        border: 1px solid #adb5bd;
+    }
+
+    /*======================================= */
+
+    /* Add Blogs Button */
+    .btn-add-blogs {
+        background-color: #235693;
+        color: #fff;
+        border: 2px solid #235693;
+        font-weight: 500;
+        padding: 0.45rem 1rem;
+        transition: all 0.3s ease;
+    }
+
+        .btn-add-blogs:hover {
+            background-color: #fff;
+            color: #235693;
+            border-color: #235693;
+        }
+
+        /* Focus state */
+        .btn-add-blogs:focus,
+        .btn-add-blogs:active {
+            outline: none; /* remove default bootstrap blue outline */
+            box-shadow: 0 0 0 0.2rem rgba(35, 86, 147, 0.4); /* custom shadow with theme color */
+            border-color: #235693;
+        }
+    /*======================================= */
+    /*======================================= */
+    /* 🔹 Dropdown Button */
+    .custom-dropdown-btn {
+        font-weight: 500;
+        border-radius: 8px;
+        padding: 6px 14px;
+        background-color: #f8f9fa;
+        transition: all 0.3s ease;
+    }
+
+        .custom-dropdown-btn:hover {
+            background-color: #e9f4fb;
+            border-color: #44B0D9;
+            color: #235695;
+        }
+
+    /* 🔹 Dropdown Menu */
+    .custom-dropdown-menu {
+        border-radius: 10px;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+        padding: 6px 0;
+        border: none;
+        min-width: 170px;
+    }
+
+        /* 🔹 Dropdown Items */
+        .custom-dropdown-menu .dropdown-item {
+            padding: 10px 16px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #333;
+            transition: all 0.2s ease;
+            border-radius: 6px;
+            margin: 2px 6px;
+        }
+
+            /* Hover + Focus */
+            .custom-dropdown-menu .dropdown-item:hover,
+            .custom-dropdown-menu .dropdown-item:focus {
+                background-color: #44B0D9 !important;
+                color: #fff !important;
+            }
+
+            /* Active State */
+            .custom-dropdown-menu .dropdown-item.active,
+            .custom-dropdown-menu .dropdown-item:active {
+                background-color: #44B0D9 !important;
+                color: #fff !important;
+            }
+
+            /* ❌ Delete special */
+            .custom-dropdown-menu .dropdown-item.text-danger:hover {
+                background-color: #dc3545 !important;
+                color: #fff !important;
+            }
+
+            /* stats isons */
+    .stat-icon-img {
+        width: 40px; /* aap chahein toh 50px bhi kar sakte hain */
+        height: 40px;
+        object-fit: contain; /* taake image distort na ho */
+    }
+
+    .stat-icon-img-big {
+        width: 55px;
+        height: 55px;
+    }
+    /*======================================= */
+</style>
+
+<!-- Stats -->
+<div class="row g-3">
+    <div class="col-md-3">
+        <div class="stat-card">
+            <div>
+                <div class="stat-value">@Model.BlogList.Count()</div>
+                <div class="stat-label">Total Blogs</div>
+            </div>
+            <img src="/img/total-blogs.png" alt="Total Blogs" class="stat-icon-img stat-icon-img-big" />
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="stat-card">
+            <div>
+                <div class="stat-value">@Model.BlogList.Count(b => b.Action == "Publish")</div>
+                <div class="stat-label">Published</div>
+            </div>
+            <img src="/img/published-blogs.png" alt="Published Blogs" class="stat-icon-img stat-icon-img-big" />
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="stat-card">
+            <div>
+                <div class="stat-value">@Model.BlogList.Count(b => b.Action == "Hide")</div>
+                <div class="stat-label">Hidden</div>
+            </div>
+            <img src="/img/hidden-blogs.png" alt="Hidden Blogs" class="stat-icon-img" />
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="stat-card">
+            <div>
+                <div class="stat-value">@Model.BlogList.Count(b => b.Adminpick == "Selected")</div>
+                <div class="stat-label">Admin Picks</div>
+            </div>
+            <img src="/img/admin-pick-blogs.png" alt="Admin Picks" class="stat-icon-img stat-icon-img-big" />
+        </div>
+    </div>
+</div>
+
+<!-- Toolbar -->
+<div class="toolbar">
+    <div class="input-group w-50">
+        <span class="input-group-text bg-white"><i class="bi bi-search"></i></span>
+        <input type="text" class="form-control" placeholder="Search blogs..." id="searchInput" />
+    </div>
+    <div>
+        <select class="form-select filter-dropdown d-inline-block w-auto" id="filterSelect">
+            <option value="">Filter by Status</option>
+            <option>Publish</option>
+            <option>Hide</option>
+            <option>Selected</option>
+        </select>
+        <a asp-action="AddBlog" class="btn btn-add-blogs rounded-pill ms-2">
+            <i class="bi bi-plus-circle"></i> Add Blog
+        </a>
+    </div>
+</div>
+
+<!-- Tabs -->
+<ul class="nav nav-tabs" id="blogTabs" role="tablist">
+    <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tableView">Table View</button></li>
+    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#cardView">Card View</button></li>
+</ul>
+
+<div class="tab-content">
+    <!-- Table View -->
+    <div class="tab-pane fade show active" id="tableView">
+        <div class="table-card">
+            <div class="table-responsive">
+                <table class="table align-middle">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Author</th>
+                            <th>Title</th>
+                            <th>Description</th>
+                            <th>Status</th>
+                            <th>Admin Pick</th>
+                            <th class="text-center">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var blog in Model.BlogList)
+                        {
+                            <tr>
+                                <td>@blog.Id</td>
+                                <td>@blog.Name<br /><small class="text-muted">@blog.Email</small></td>
+                                <td>@blog.Title</td>
+                                <td>
+                                    @(
+                                        blog.Description.Length > 100
+                                        ? blog.Description.Substring(0, 100) + "..."
+                                        : blog.Description
+                                        )
+
+                                    @if (blog.Description.Length > 100)
+                                    {
+                                        <br />
+                                        <a href="javascript:void(0);"
+                                           onclick='showFullDescription(@Html.Raw(System.Text.Json.JsonSerializer.Serialize(blog.Description)))'
+                                           style="color:#2373AE;">
+                                            Read more
+                                        </a>
+                                    }
+                                </td>
+                                <td>
+                                    @if (blog.Action == "Hide")
+                                    {
+                                        <span class="badge badge-status badge-hide">Hide</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge badge-status badge-publish">Publish</span>
+                                    }
+                                </td>
+                                <td>
+                                    @if (blog.Adminpick == "Selected")
+                                    {
+                                        <span class="badge badge-status badge-selected">Selected</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge badge-status badge-no">No</span>
+                                    }
+                                </td>
+                                <td class="text-center">
+                                    <div class="dropdown">
+                                        <button class="btn btn-sm btn-light border dropdown-toggle custom-dropdown-btn" type="button" data-bs-toggle="dropdown">
+                                            Manage
+                                        </button>
+                                        <ul class="dropdown-menu custom-dropdown-menu">
+                                            <li><a asp-action="EditBlog" asp-route-id="@blog.Id" class="dropdown-item">Edit</a></li>
+
+                                            <li>
+                                                <button type="button" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#commentsModal-@blog.Id">
+                                                    View Comments
+                                                </button>
+                                            </li>
+
+                                            <li>
+                                                <form asp-action="UpdateBlogAction" method="post" class="m-0">
+                                                    <input type="hidden" name="id" value="@blog.Id" />
+                                                    <button type="submit" class="dropdown-item">Publish</button>
+                                                </form>
+                                            </li>
+
+                                            <li>
+                                                <form asp-action="UpdateBlogActionTwo" method="post" class="m-0">
+                                                    <input type="hidden" name="id" value="@blog.Id" />
+                                                    <button type="submit" class="dropdown-item">Hide</button>
+                                                </form>
+                                            </li>
+
+                                            <li>
+                                                <form asp-action="UpdateBlogPick" method="post" class="m-0">
+                                                    <input type="hidden" name="id" value="@blog.Id" />
+                                                    <button type="submit" class="dropdown-item">Pick</button>
+                                                </form>
+                                            </li>
+
+                                            <li>
+                                                <form asp-action="UpdateBlogPickTwo" method="post" class="m-0">
+                                                    <input type="hidden" name="id" value="@blog.Id" />
+                                                    <button type="submit" class="dropdown-item">UnPick</button>
+                                                </form>
+                                            </li>
+
+                                            <li>
+                                                <form asp-action="DeleteBlog" method="post" class="m-0" onsubmit="return confirm('Delete this blog?');">
+                                                    <input type="hidden" name="id" value="@blog.Id" />
+                                                    <button type="submit" class="dropdown-item text-danger">Delete</button>
+                                                </form>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Full Description -->
+    <div class="modal fade" id="fullDescriptionModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Full Description</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="fullDescriptionBody"></div>
+            </div>
+        </div>
+    </div>
+
+    @section Scripts {
+        <script>
+            function showFullDescription(text) {
+                document.getElementById('fullDescriptionBody').innerText = text;
+                var myModal = new bootstrap.Modal(document.getElementById('fullDescriptionModal'));
+                myModal.show();
+            }
+        </script>
+    }
+
+    <!-- Card View -->
+    <div class="tab-pane fade" id="cardView">
+        <div class="row mt-3">
+            @foreach (var blog in Model.BlogList)
+            {
+                <div class="col-md-4 mb-4">
+                    <div class="stat-card flex-column align-items-start">
+                        <div class="blog-info">
+                            <div class="blog-title">@blog.Title</div>
+                            <div class="blog-meta">
+                                @(
+                                    blog.Description.Length > 100
+                                    ? blog.Description.Substring(0, 100) + "..."
+                                    : blog.Description
+                                    )
+
+                                @if (blog.Description.Length > 100)
+                                {
+                                    <br />
+                                    <a href="javascript:void(0);"
+                                       onclick='showFullDescription(@Html.Raw(System.Text.Json.JsonSerializer.Serialize(blog.Description)))'
+                                       style="color:#2373AE;">
+                                        Show All
+                                    </a>
+                                }
+                            </div>
+                            <div class="blog-meta">By @blog.Name (@blog.Email)</div>
+                        </div>
+                        <div class="mt-3">
+                            @if (blog.Action == "Hide")
+                            {
+                                <span class="badge badge-status badge-hide">Hide</span>
+                            }
+                            else
+                            {
+                                <span class="badge badge-status badge-publish">Publish</span>
+                            }
+
+                            @if (blog.Adminpick == "Selected")
+                            {
+                                <span class="badge badge-status badge-selected ms-2">Selected</span>
+                            }
+                            else
+                            {
+                                <span class="badge badge-status badge-no ms-2">No</span>
+                            }
+                        </div>
+                        <div class="dropdown mt-3 w-100">
+                            <button class="btn btn-sm btn-light border dropdown-toggle w-100"
+                                    type="button"
+                                    data-bs-toggle="dropdown">
+                                Manage
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a asp-action="EditBlog" asp-route-id="@blog.Id" class="dropdown-item">Edit</a>
+                                </li>
+                                <li>
+                                    <button type="button"
+                                            class="dropdown-item"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#commentsModal-@blog.Id">
+                                        View Comments
+                                    </button>
+                                </li>
+                                <li>
+                                    <form asp-action="UpdateBlogAction" method="post" class="m-0">
+                                        <input type="hidden" name="id" value="@blog.Id" />
+                                        <button type="submit" class="dropdown-item">Publish</button>
+                                    </form>
+                                </li>
+                                <li>
+                                    <form asp-action="UpdateBlogActionTwo" method="post" class="m-0">
+                                        <input type="hidden" name="id" value="@blog.Id" />
+                                        <button type="submit" class="dropdown-item">Hide</button>
+                                    </form>
+                                </li>
+                                <li>
+                                    <form asp-action="UpdateBlogPick" method="post" class="m-0">
+                                        <input type="hidden" name="id" value="@blog.Id" />
+                                        <button type="submit" class="dropdown-item">Pick</button>
+                                    </form>
+                                </li>
+                                <li>
+                                    <form asp-action="UpdateBlogPickTwo" method="post" class="m-0">
+                                        <input type="hidden" name="id" value="@blog.Id" />
+                                        <button type="submit" class="dropdown-item">UnPick</button>
+                                    </form>
+                                </li>
+                                <li>
+                                    <form asp-action="DeleteBlog" method="post" class="m-0"
+                                          onsubmit="return confirm('Delete this blog?');">
+                                        <input type="hidden" name="id" value="@blog.Id" />
+                                        <button type="submit" class="dropdown-item">Delete</button>
+                                    </form>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+    <!-- Modal for Full Description (same as table view me use hua tha) -->
+    <div class="modal fade" id="fullDescriptionModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Full Description</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="fullDescriptionBody"></div>
+            </div>
+        </div>
+    </div>
+
+ 
+
+</div>
+
+<!-- Comments Modals (rendered once per blog, works for both views) -->
+@foreach (var blog in Model.BlogList)
+{
+    <div class="modal fade" id="commentsModal-@blog.Id" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Comments - @blog.Title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    @if (Model.Comments.Any(c => c.BlogId == blog.Id))
+                    {
+                        <ul class="list-unstyled">
+                            @foreach (var c in Model.Comments.Where(c => c.BlogId == blog.Id))
+                            {
+                                <li class="mb-3 border-bottom pb-2">
+                                    <strong>@c.Name</strong> (<small>@c.Email</small>)<br />
+                                    <small class="text-muted">@c.CommentDate?.ToString("dd MMM yyyy")</small>
+                                    <p>@c.CommentText</p>
+                                </li>
+                            }
+                        </ul>
+                    }
+                    else
+                    {
+                        <p class="text-muted">No comments yet.</p>
+                    }
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger rounded-pill" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@* description modal *@
+
+<!-- Single Description Modal -->
+<div class="modal fade" id="descriptionModal" tabindex="-1" aria-labelledby="descriptionModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="descriptionModalLabel">Full Description</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body" id="descriptionModalBody">
+                <!-- Full description will be injected here -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger w-100 rounded-pill" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function showFullDescription(text) {
+        document.getElementById("descriptionModalBody").innerText = text;
+        var myModal = new bootstrap.Modal(document.getElementById('descriptionModal'));
+        myModal.show();
+    }
+</script>
+
+
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const searchInput = document.querySelector("#searchInput");
+        const filterSelect = document.querySelector("#filterSelect");
+
+        function filterBlogs() {
+            const searchValue = searchInput.value.toLowerCase();
+            const filterValue = filterSelect.value.toLowerCase();
+
+            // Table filtering
+            document.querySelectorAll("#tableView tbody tr").forEach(row => {
+                const title = row.querySelector("td:nth-child(3)")?.textContent.toLowerCase() || "";
+                const author = row.querySelector("td:nth-child(2)")?.textContent.toLowerCase() || "";
+
+                // ✅ collect ALL badge texts
+                const badges = Array.from(row.querySelectorAll(".badge")).map(b => b.textContent.toLowerCase());
+
+                const matchesSearch = title.includes(searchValue) || author.includes(searchValue);
+                const matchesFilter = !filterValue || badges.some(b => b.includes(filterValue));
+
+                row.style.display = (matchesSearch && matchesFilter) ? "" : "none";
+            });
+
+            // Card filtering
+            document.querySelectorAll("#cardView .col-md-4").forEach(card => {
+                const title = card.querySelector(".blog-title")?.textContent.toLowerCase() || "";
+                const author = card.querySelector(".blog-meta")?.textContent.toLowerCase() || "";
+
+                const badges = Array.from(card.querySelectorAll(".badge")).map(b => b.textContent.toLowerCase());
+
+                const matchesSearch = title.includes(searchValue) || author.includes(searchValue);
+                const matchesFilter = !filterValue || badges.some(b => b.includes(filterValue));
+
+                card.style.display = (matchesSearch && matchesFilter) ? "" : "none";
+            });
+        }
+
+        searchInput.addEventListener("keyup", filterBlogs);
+        filterSelect.addEventListener("change", filterBlogs);
+    });
+</script>
+

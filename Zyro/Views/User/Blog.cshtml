@@ -1,0 +1,212 @@
+﻿@model IEnumerable<Zyro.Models.BlogListViewModel>
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Blogs";
+}
+
+<style>
+    a.btn.custom-login-btn:focus {
+        outline: none;
+        box-shadow: 0 0 8px 3px rgba(68, 177, 218, 0.6);
+        transition: all 0.3s ease;
+    }
+
+    .blog-content a.h4 {
+        color: inherit; /* by default jo color hoga */
+        text-decoration: none; /* underline na aaye */
+        transition: color 0.3s ease;
+    }
+
+        .blog-content a.h4:hover {
+            color: #2373AE;
+        }
+
+    .blue-box {
+        background-color: #2373AE;
+        color: #fff;
+        padding: 6px 10px;
+        border-radius: 6px;
+    }
+
+        .blue-box .fa {
+            color: #fff;
+        }
+
+    .custom-login-btn:focus,
+    .custom-login-btn:active {
+        outline: none; /* removes default pink/blue outline */
+        box-shadow: 0 0 8px 3px rgba(68, 177, 218, 0.6); /* soft #44B1DA glow */
+        transition: all 0.1s ease; /* smooth effect */
+    }
+
+</style>
+<!-- Header Start -->
+<div class="container-fluid bg-breadcrumb">
+    <ul class="breadcrumb-animation">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <div class="container text-center py-3" style="max-width: 900px;">
+        <h3 class="display-3 mb-4 wow fadeInDown" data-wow-delay="0.1s">Blogs</h3>
+        <ol class="breadcrumb justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s" style="font-size:16px;">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item active" style="color:#2373AE;">Blogs</li>
+        </ol>
+    </div>
+</div>
+<!-- Header End -->
+
+<div class="container py-5">
+    <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">
+        <h1 class="display-5 text-capitalize mb-3">Zyro<span style="color:#2373AE;"> Blog & News</span></h1>
+        <p class="mb-0 text-dark" style="font-size:18px;">
+            "Editors Choice"
+        </p>
+    </div>
+
+    @{
+        var adminPickBlogs = Model?.Where(x => x.Adminpick == "Selected").ToList();
+    }
+
+    <div class="row g-4">
+        @if (adminPickBlogs != null && adminPickBlogs.Any())
+        {
+            foreach (var item in adminPickBlogs)
+            {
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="blog-item shadow-sm rounded overflow-hidden h-100 d-flex flex-column">
+                        <div class="blog-img">
+                            <img src="~/img/blogspic.png" class="img-fluid rounded-top w-100 d-block" alt="Blog Image">
+                        </div>
+                        <div class="blog-content rounded-bottom p-4 d-flex flex-column flex-grow-1">
+
+                            <div class="blog-comment my-3 d-flex justify-content-between">
+                                <div class="small d-flex align-items-center blue-box">
+                                    <span class="fa fa-user me-2"></span>
+                                    <span>@item.Name</span>
+                                </div>
+                                
+                                <div class="small d-flex align-items-center blue-box">
+                                    <span class="fa fa-comment-alt me-2"></span>
+                                    <span>@item.CommentCount Comments</span>
+                                </div>
+                            </div>
+
+                            <a asp-controller="User" asp-action="BlogDetails" asp-route-id="@item.Id"
+                               class="h4 d-block mb-3">@item.Title</a>
+
+                            <div class="mt-auto">
+                                <a asp-controller="User" asp-action="BlogDetails" asp-route-id="@item.Id"
+                                   class="btn custom-login-btn py-2 rounded-pill w-100">
+                                    Read More
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="col-12 text-center">
+                <p class="text-muted">No blogs available yet.</p>
+            </div>
+        }
+    </div>
+</div>
+
+
+<!-- Blog Start -->
+<div class="container-fluid blog py-5">
+    <div class="container py-5">
+        <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">
+            <h1 class="display-5 text-capitalize mb-3">Zyro<span style="color:#2373AE;"> Blog & News</span></h1>
+            <p class="mb-0 text-dark" style="font-size:18px;">
+                "From ideas to impact – explore our blog."
+            </p>
+        </div>
+
+        <div class="row g-4">
+            @if (Model != null && Model.Any())
+            {
+                foreach (var item in Model)
+                {
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="blog-item shadow-sm rounded overflow-hidden h-100 d-flex flex-column">
+                            <div class="blog-img">
+                                <img src="~/img/blogspic.png" class="img-fluid rounded-top w-100" alt="Blog Image">
+                            </div>
+                            <div class="blog-content rounded-bottom p-4 d-flex flex-column flex-grow-1">
+
+
+                                <div class="blog-comment my-3 d-flex justify-content-between">
+                                    <div class="small d-flex align-items-center blue-box">
+                                        <span class="fa fa-user me-2"></span>
+                                        <span>@item.Name</span>
+                                    </div>
+                                    <div class="small d-flex align-items-center blue-box">
+                                        <span class="fa fa-comment-alt me-2"></span>
+                                        <span>@item.CommentCount Comments</span>
+                                    </div>
+                                </div>
+
+                                <a asp-controller="User" asp-action="BlogDetails" asp-route-id="@item.Id"
+                                   class="h4 d-block mb-3">@item.Title</a>
+
+                                <div class="mt-auto">
+                                    @* ye button ko neeche stick karega *@
+                                    <a asp-controller="User" asp-action="BlogDetails" asp-route-id="@item.Id"
+                                       class="btn custom-login-btn py-2 rounded-pill w-100">
+                                        Read More
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                <div class="col-12 text-center">
+                    <p class="text-muted">No blogs available yet.</p>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<!-- Blog End -->
+<!-- Banner Start -->
+<div class="container-fluid banner py-5 wow zoomInDown" data-wow-delay="0.1s">
+    <div class="container py-5">
+        <div class="banner-item rounded">
+            <img src="~/img/bannerimg-1.png" class="img-fluid rounded w-100" alt="Digital Marketing Banner">
+            <div class="banner-content text-end">
+                <h2 class="text-light">Grow with Zyro Agency</h2>
+                <h1 style="color:#7dcbf5;">Boost Your Online</h1>
+                <h1 style="color:#7dcbf5;text-align:left;margin-right:23%;">Presence</h1>
+                <p class="text-white" style="font-family:Arial, Helvetica, sans-serif;">
+                    Let’s scale your business together!
+                </p>
+                <div class="banner-btn">
+                    <a href="https://wa.me/your-number"
+                      target="_blank" class="btn custom-login-btn rounded-pill py-3 px-4 px-md-5 me-2 text-light">
+                        <i class="fab fa-whatsapp"></i> WhatsApp Us
+                    </a>
+                    <a href="mailto:zyroagency@gmail.com"
+                       class="btn custom-login-btn rounded-pill py-3 px-4 px-md-5 ms-2">
+                        <i class="fa fa-envelope me-2"></i> Get in Touch
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Banner End -->

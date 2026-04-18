@@ -1,0 +1,109 @@
+﻿@model Zyro.Models.Order 
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Meeting";
+    ViewData["Title"] = "Profile";
+}
+
+<style>
+    button.btn.btn-schedule-meeting {
+        background-color: #2373AE !important;
+        color: #fff !important;
+        border: 1px solid #2373AE !important;
+        font-weight: 500;
+        transition: all 0.3s ease;
+    }
+
+        button.btn.btn-schedule-meeting:hover {
+            background-color: #fff !important;
+            color: #2373AE !important;
+            border: 1px solid #2373AE !important;
+        }
+</style>
+
+<!-- Header Start -->
+<div class="container-fluid bg-breadcrumb">
+    <ul class="breadcrumb-animation">
+        <li></li><li></li><li></li><li></li><li></li>
+        <li></li><li></li><li></li><li></li><li></li>
+    </ul>
+    <div class="container text-center py-4" style="max-width: 900px;">
+        <h3 class="display-3 mb-4 wow fadeInDown" data-wow-delay="0.1s">Schedule a Meeting</h3>
+        <ol class="breadcrumb justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
+            <li class="breadcrumb-item"><a asp-controller="User" asp-action="Index">Home</a></li>
+            <li class="breadcrumb-item"><a asp-controller="User" asp-action="Profile">Profile</a></li>
+            <li class="breadcrumb-item active" style="color:#2373AE;">Schedule Meeting</li>
+        </ol>
+    </div>
+</div>
+<!-- Header End -->
+
+<!-- Meeting Intro -->
+<div class="container-fluid py-4">
+    <div class="container py-4">
+        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">
+            <h4 class="mb-2 fw-bold" style="color:#2373AE;">Plan Ahead</h4>
+            <h1 class="display-6 mb-3">Schedule Your Meeting</h1>
+            <p class="mb-0" style="color:#2373AE;">
+                Select a suitable date and time to schedule your upcoming meeting.  
+                Only future dates are allowed to ensure proper planning.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Meeting Form -->
+<div class="container-fluid py-4">
+    <div class="container py-4">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-lg-7 wow fadeInLeft" data-wow-delay="0.1s">
+                <form asp-action="Meeting" method="post" id="MeetingForm" novalidate>
+                    <input type="hidden" asp-for="Id" /> <!-- ✅ ensures order Id is preserved -->
+
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <input asp-for="Date" type="date" class="form-control" id="MeetingDate" required />
+                                <label asp-for="Date">Meeting Date</label>
+                                <span asp-validation-for="Date" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <input asp-for="Time" type="time" class="form-control" id="MeetingTime" required />
+                                <label asp-for="Time">Meeting Time</label>
+                                <span asp-validation-for="Time" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-schedule-meeting w-100 py-3 fs-5">Schedule Meeting</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Ensure only future dates can be picked
+        document.addEventListener("DOMContentLoaded", function () {
+            let dateInput = document.getElementById("MeetingDate");
+            let today = new Date().toISOString().split("T")[0];
+            dateInput.setAttribute("min", today);
+
+            document.getElementById("MeetingForm").addEventListener("submit", function (e) {
+                let selectedDate = new Date(dateInput.value + "T" + document.getElementById("MeetingTime").value);
+                let now = new Date();
+
+                if (selectedDate <= now) {
+                    e.preventDefault();
+                    alert("Please select a future date and time.");
+                }
+            });
+        });
+    </script>
+}

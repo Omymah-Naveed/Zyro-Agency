@@ -1,0 +1,80 @@
+﻿@model Zyro.Models.OrderViewModel
+
+@{
+    Layout = "_LayoutAdmin";
+    ViewData["Title"] = "EditOrderMeeting";
+    ViewData["Title"] = "Order";
+}
+
+<style>
+    .btn-upload {
+        background: #235695;
+        color: white;
+        border: none;
+        padding: 6px 12px;
+        border-radius: 5px;
+        font-size: 16px;
+        transition: 0.3s;
+    }
+
+        .btn-upload:hover {
+            background: #2373AC;
+            color: ghostwhite;
+        }
+
+    .form-floating > .form-control:focus,
+    .form-floating > .form-select:focus {
+        border-color: #44B1DA !important;
+        box-shadow: none;
+    }
+
+        .form-floating > .form-control:focus ~ label,
+        .form-floating > .form-select:focus ~ label {
+            color: #2373AC !important;
+            font-weight: bold;
+        }
+</style>
+
+<div class="container-xxl">
+    <div class="container py-5 px-lg-5">
+        <div class="wow fadeInUp" data-wow-delay="0.1s">
+            <h1 class="text-center mb-5">Edit Services</h1>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-7">
+                <div class="wow fadeInUp" data-wow-delay="0.3s">
+                    <form asp-action="EditOrderMeeting" enctype="multipart/form-data" method="post" class="shadow p-4 rounded bg-white">
+                        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input asp-for="Date" type="date" class="form-control" id="MeetingDate" required />
+                                    <label asp-for="Date">Meeting Date</label>
+                                    <span asp-validation-for="Date" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input asp-for="Time" type="time" class="form-control" id="MeetingTime" required />
+                                    <label asp-for="Time">Meeting Time</label>
+                                    <span asp-validation-for="Time" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-floating">
+                                    <input asp-for="MeetingText" class="form-control" placeholder="Enter Link" />
+                                    <label asp-for="MeetingText">Enter Meeting Link</label>
+                                    <span asp-validation-for="MeetingText" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-upload w-100 rounded-pill">Update</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

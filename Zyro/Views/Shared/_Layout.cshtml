@@ -1,0 +1,249 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>ZYRO AGENCY</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Rubik:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet (Updated to FA 6.4.2) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="~/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="~/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="~/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="~/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+    <link href="~/css/user_style.css" rel="stylesheet">
+    <link href="~/css/forms.css" rel="stylesheet">
+    <link href="~/css/blog.css" rel="stylesheet">
+    <link href="~/css/faqs.css" rel="stylesheet">
+    <link href="~/css/singlepageheader.css" rel="stylesheet">
+</head>
+
+<style>
+
+    .back-to-top:focus {
+        outline: none; /* removes default pink/blue outline */
+        box-shadow: 0 0 8px 3px rgba(68, 177, 218, 0.6); /* soft #44B1DA glow */
+        transition: all 0.3s ease; /* smooth effect */
+    }
+
+
+    .footer .btn-square:focus,
+    .footer .btn-square:active {
+        outline: none !important;
+        box-shadow: none !important;
+    }
+
+    .company-name {
+        color: #ffffff; /* default color */
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+        .company-name:hover {
+            color: #44AFD8; /* hover color */
+            letter-spacing: 0px;
+        }
+
+    .custom-login-btn:focus,
+    .custom-login-btn:active {
+        outline: none; /* removes default pink/blue outline */
+        box-shadow: 0 0 8px 3px rgba(68, 177, 218, 0.6); /* soft #44B1DA glow */
+        transition: all 0.3s ease; /* smooth effect */
+    }
+
+</style>
+<body>
+
+    <!-- Spinner Start -->
+    @* <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div> *@
+    <!-- Spinner End -->
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0" style="font-family:Arial, Helvetica, sans-serif;">
+        <a asp-controller="User" asp-action="Index" class="navbar-brand p-0">
+            <img src="~/img/logo.png" alt="Logo" style="height: 120px; transition: height 0.4s ease;">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" style="border:solid 2px; border-color:white;">
+            <span class="fa fa-bars" style="border:none; color:whitesmoke;"></span>
+        </button>
+        <div class="collapse navbar-collapse position-relative w-100" id="navbarCollapse">
+
+            <!-- Center nav links -->
+            <div class="navbar-nav justify-content-center w-100 py-0">
+                <a asp-controller="User" asp-action="Index" class="nav-item nav-link pe-4 @(ViewData["Title"]?.ToString() == "Index" ? "active" : "")" style="font-size:18px;">Home</a>
+                <a asp-controller="User" asp-action="AboutUs" class="nav-item nav-link pe-4 @(ViewData["Title"]?.ToString() == "AboutUs" ? "active" : "")" style="font-size:18px;">About</a>
+                <a asp-controller="User" asp-action="Services" class="nav-item nav-link pe-4 @(ViewData["Title"]?.ToString() == "Service" ? "active" : "")" style="font-size:18px;">Services</a>
+                <div class="nav-item dropdown pe-4">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="font-size:18px;">More</a>
+                    <div class="dropdown-menu m-0 bg-dark">
+                        <a asp-controller="User" asp-action="Blog" class="dropdown-item text-light @(ViewData["Title"]?.ToString() == "Blog" ? "active" : "")">Blog</a>
+                        <a asp-controller="User" asp-action="PrivacyPolicy" class="dropdown-item text-light @(ViewData["Title"]?.ToString() == "PrivacyPolicy" ? "active" : "")">Privacy Policy</a>
+                    </div>
+                </div>
+                <a asp-controller="User" asp-action="Contact" class="nav-item nav-link pe-4 @(ViewData["Title"]?.ToString() == "Contact" ? "active" : "")" style="font-size:18px;">Contact</a>
+            </div>
+
+            <!-- Right side (Login + Dark Mode) -->
+            <div class="d-flex align-items-center gap-2">
+                <div class="nav-item dropdown">
+                    @if (Context.Session.GetString("useremail") != null)
+                    {
+                        <a href="#" class="nav-link dropdown-toggle rounded-pill custom-login-btn" data-bs-toggle="dropdown" style="font-size:18px; color:white;">
+                            @Context.Session.GetString("username")
+                        </a>
+                        <div class="dropdown-menu m-0 bg-dark">
+                            <a asp-controller="User" asp-action="Profile" class="dropdown-item text-light @(ViewData["Title"]?.ToString() == "Profile" ? "active" : "")">Profile</a>
+                            <a asp-controller="User" asp-action="Logout" class="dropdown-item text-light">Logout</a>
+                        </div>
+                    }
+                    else
+                    {
+                        <a asp-controller="User" asp-action="Login" class="btn custom-login-btn rounded-pill py-2 px-4 ms-auto" style="width: 120px; font-size:18px;">Log In</a>
+                    }
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    @RenderBody()
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark footer py-5 wow fadeIn" data-wow-delay="0.2s">
+        <div class="container py-5">
+            <div class="row g-5">
+
+                <!-- Company Logo & About -->
+                <div class="col-md-6 col-lg-6 col-xl-3 d-flex flex-column justify-content-start">
+                    <div class="footer-item text-center text-lg-start">
+                        <a href="@Url.Action("Index")">
+                            <img src="~/img/logo.png" alt="Company Logo" class="mb-3" style="max-width: 180px;">
+                        </a>
+                        <p class="fs-4 mb-4" style="font-weight:bold;font-family:'Segoe Script';color:#41B2DB;">
+                            Fueling brands from Zero to Zyro.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="mb-4 text-light">Quick Links</h4>
+                        <a asp-controller ="User" asp-action="AboutUs" class="text-light">About Us</a>
+                        <a asp-controller="User" asp-action="Contact" class="text-light"> Contact Us</a>
+                        <a asp-controller="User" asp-action="Blog" class="text-light"> Our Blogs</a>
+                        <a asp-controller="User" asp-action="Login" class="text-light"> Login & Signup</a>
+                    </div>
+                </div>
+
+                <!-- Services -->
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="mb-4 text-light">Services</h4>
+                        <a asp-controller="User" asp-action="Services" class="text-light"> Search Engine Optimization</a>
+                        <a asp-controller="User" asp-action="Services" class="text-light"> Website Designing</a>
+                        <a asp-controller="User" asp-action="Services" class="text-light"> Email Marketing</a>
+                        <a asp-controller="User" asp-action="Services" class="text-light"> Social Media Marketing</a>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="mb-4 text-light">Contact Info</h4>
+
+                        <!-- Location (Google Maps) -->
+                        <a href="https://www.google.com/maps/place/Aptech+Computer+Education+North+Nazimabad+Center/data=!4m2!3m1!1s0x0:0x93d609e8bec9a880?sa=X&ved=1t:2428&ictx=111&cshid=1755967500983208" class="text-light" target="_blank">
+                            <i class="fa fa-map-marker-alt me-2"></i> Aptech NN Campus, Karachi
+                        </a>
+
+                        <!-- Email (Gmail compose) -->
+                        <a href="mailto:zyroagency@gmail.com" class="text-light">
+                            <i class="fas fa-envelope me-2"></i> zyroagency@gmail.com
+                        </a>
+
+                        <!-- Phone (no action) -->
+                        <a href="javascript:void(0);" class="text-light">
+                            <i class="fas fa-phone me-2"></i> +012 345 67890
+                        </a>
+
+                        <!-- Social Media Icons (Login Page) -->
+                        <div class="d-flex align-items-center mt-3">
+                            <i class="fas fa-share fa-2x text-light me-2"></i>
+                            <a class="btn-square btn rounded-circle mx-1" href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn-square btn rounded-circle mx-1" href="https://x.com/" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a class="btn-square btn rounded-circle mx-1" href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright py-4">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6 text-center text-md-start mb-md-0">
+                    <span class="text-white">
+                        <a href="@Url.Action("Index")"><i class="fas fa-copyright text-light me-2"></i>Zyro Agency</a>, All rights reserved.
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+    <!-- Back to Top -->
+    <a href="#" class="btn zyro-btn btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/wow/wow.min.js"></script>
+    <script src="~/lib/easing/easing.min.js"></script>
+    <script src="~/lib/waypoints/waypoints.min.js"></script>
+    <script src="~/lib/counterup/counterup.min.js"></script>
+    <script src="~/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="~/lib/lightbox/js/lightbox.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="~/js/user_main.js"></script>
+    @RenderSection("Scripts", required: false)
+    <script src="~/js/counter.js"></script>
+    <script src="~/js/profile.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+   
+
+
+</body>
+
+</html>
+
+

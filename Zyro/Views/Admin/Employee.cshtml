@@ -1,0 +1,481 @@
+﻿@model IEnumerable<AdminEmployeeViewModel>
+
+@{
+    Layout = "_LayoutAdmin";
+    ViewData["Title"] = "Employees";
+}
+
+<style>
+
+    body {
+        background-color: var(--light);
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    /* Stats Cards */
+    .stat-card {
+        background: #fff;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        transition: transform 0.2s ease-in-out;
+    }
+
+        .stat-card:hover {
+            transform: translateY(-4px);
+        }
+
+    .stat-icon {
+        font-size: 32px;
+        color: var(--primary);
+    }
+
+    .stat-value {
+        font-size: 22px;
+        font-weight: 600;
+        color: var(--dark);
+    }
+
+    .stat-label {
+        font-size: 14px;
+        color: gray;
+    }
+
+    /* Toolbar */
+    .toolbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 25px 0;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .employee-info {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+        .employee-info img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+    .badge-status {
+        border-radius: 30px;
+        padding: 6px 12px;
+        font-size: 13px;
+        font-weight: 500;
+    }
+
+    .badge-active {
+        background: rgba(0, 176, 80, 0.15);
+        color: #008000;
+    }
+
+    .badge-frozen {
+        background: rgba(255, 0, 0, 0.15);
+        color: #b30000;
+    }
+
+    /* Search input focus styling */
+    .input-group .form-control:focus {
+        border-color: #235695 !important;
+        box-shadow: 0 0 0 0.2rem rgba(35, 86, 149, 0.25) !important;
+    }
+
+    /* Filter Dropdown Focus Styling */
+.filter-dropdown:focus {
+    border-color: #235695 !important;
+    box-shadow: 0 0 0 0.25rem rgba(35, 86, 149, 0.25) !important;
+}
+
+/* stats icons */
+
+    .stat-card {
+        background: #fff;
+        border-radius: 12px;
+        padding: 1.2rem;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+        .stat-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+        }
+
+    .stat-value {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #333;
+    }
+
+    .stat-label {
+        font-size: 0.9rem;
+        color: #666;
+    }
+
+    .stat-icon {
+        font-size: 2rem;
+    }
+
+    .themed-icon {
+        color: #235695; /* Theme color */
+    }
+
+    /* Add Employee Button */
+    .btn-add-employee {
+        background-color: #235693;
+        color: #fff;
+        border: 2px solid #235693;
+        font-weight: 500;
+        padding: 0.45rem 1rem;
+        transition: all 0.3s ease;
+    }
+
+        .btn-add-employee:hover {
+            background-color: #fff;
+            color: #235693;
+            border-color: #235693;
+        }
+
+        /* Focus state */
+        .btn-add-employee:focus,
+        .btn-add-employee:active {
+            outline: none; /* remove default bootstrap blue outline */
+            box-shadow: 0 0 0 0.2rem rgba(35, 86, 147, 0.4); /* custom shadow with theme color */
+            border-color: #235693;
+        }
+
+    .stat-icon-img {
+        width: 40px; /* same size as icons */
+        height: 40px;
+        object-fit: contain;
+    }
+
+    /* Bigger icons for Total Employees & Roles */
+    .stat-icon-big {
+        width: 60px;
+        height: 60px;
+    }
+
+    .role-stat-icon-big {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* ----------------------------------------------------- */
+    /* 🔹 Dropdown Button Style */
+    .custom-dropdown-btn {
+        font-weight: 500;
+        border-radius: 8px;
+        padding: 6px 14px;
+        background-color: #f8f9fa;
+        transition: all 0.3s ease;
+    }
+
+        .custom-dropdown-btn:hover {
+            background-color: #e9f4fb;
+            border-color: #44B0D9;
+            color: #235695;
+        }
+
+    /* 🔹 Dropdown Menu */
+    .custom-dropdown-menu {
+        border-radius: 10px;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+        padding: 6px 0;
+        border: none;
+    }
+
+        /* 🔹 Dropdown Items */
+        .custom-dropdown-menu .dropdown-item {
+            padding: 10px 16px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #333;
+            transition: all 0.2s ease;
+            border-radius: 6px;
+            margin: 2px 6px;
+        }
+
+            /* Hover + Focus */
+            .custom-dropdown-menu .dropdown-item:hover,
+            .custom-dropdown-menu .dropdown-item:focus {
+                background-color: #44B0D9 !important;
+                color: #fff !important;
+            }
+
+            /* Active (when clicked) */
+            .custom-dropdown-menu .dropdown-item.active,
+            .custom-dropdown-menu .dropdown-item:active {
+                background-color: #44B0D9 !important;
+                color: #fff !important;
+            }
+
+            /* ❌ Delete option (special style) */
+            .custom-dropdown-menu .dropdown-item.text-danger:hover {
+                background-color: #dc3545 !important; /* red */
+                color: #fff !important;
+            }
+    /* ----------------------------------------------------- */
+
+</style>
+
+@* <div class="container-fluid px-4"> *@
+
+<!-- Stats Overview -->
+<div class="row g-3">
+    <div class="col-md-3">
+        <div class="stat-card">
+            <div>
+                <div class="stat-value">@Model.Count()</div>
+                <div class="stat-label">Total Employees</div>
+            </div>
+            <img src="~/img/total-employees.png" alt="Total Employees" class="stat-icon-img stat-icon-big" />
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="stat-card">
+            <div>
+                <div class="stat-value">@Model.Count(e => e.Action != "Freeze")</div>
+                <div class="stat-label">Active Employees</div>
+            </div>
+            <img src="~/img/active-employees.png" alt="Active Employees" class="stat-icon-img" />
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="stat-card">
+            <div>
+                <div class="stat-value">@Model.Count(e => e.Action == "Freeze")</div>
+                <div class="stat-label">Frozen Employees</div>
+            </div>
+            <img src="~/img/inactive-employees.png" alt="Frozen Employees" class="stat-icon-img" />
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="stat-card">
+            <div>
+                <div class="stat-value">@Model.Select(e => e.RoleName).Distinct().Count()</div>
+                <div class="stat-label">Roles</div>
+            </div>
+            <img src="~/img/role.png" alt="Roles" class="stat-icon-img  role-stat-icon-big" />
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Toolbar -->
+<div class="toolbar d-flex justify-content-between align-items-center mb-3">
+    <div class="input-group w-50">
+        <span class="input-group-text bg-white"><i class="bi bi-search"></i></span>
+        <input type="text" class="form-control" placeholder="Search employees by name or email..." />
+    </div>
+    <div>
+        <select class="form-select filter-dropdown d-inline-block w-auto">
+            <option value="">Filter by Status</option>
+            <option>Active</option>
+            <option>Frozen</option>
+        </select>
+        <a asp-controller="Admin" asp-action="AddEmployee" class="btn btn-add-employee rounded-pill ms-2">
+            <i class="bi bi-person-plus"></i> Add Employee
+        </a>
+    </div>
+</div>
+
+<!-- Tabs -->
+<ul class="nav nav-tabs" id="employeeTabs" role="tablist">
+    <li class="nav-item"><button class="nav-link active" id="table-tab" data-bs-toggle="tab" data-bs-target="#tableView" type="button">Table View</button></li>
+    <li class="nav-item"><button class="nav-link" id="cards-tab" data-bs-toggle="tab" data-bs-target="#cardView" type="button">Card View</button></li>
+    @* <li class="nav-item"><button class="nav-link" id="analytics-tab" data-bs-toggle="tab" data-bs-target="#analyticsView" type="button">Analytics</button></li> *@
+</ul>
+
+<!-- Tab Content -->
+<div class="tab-content">
+    <!-- Table View -->
+    <div class="tab-pane fade show active" id="tableView">
+        <div class="table-card">
+            <div class="table-responsive">
+                <table class="table align-middle">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Employee</th>
+                            <th>Email</th>
+                            <th>City</th>
+                            <th>Age</th>
+                            <th>Status</th>
+                            <th>Role</th>
+                            <th class="text-center">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var user in Model)
+                        {
+                            <tr>
+                                <td>@user.Id</td>
+                                <td>
+                                    <div class="employee-info">
+                                        @if (!string.IsNullOrEmpty(user.ImagePath))
+                                        {
+                                            <img src="~/profile_images/@user.ImagePath" />
+                                        }
+                                        else
+                                        {
+                                            <img src="~/img/default-user.png" />
+                                        }
+                                        <div>
+                                            <div class="fw-bold">@user.Name</div>
+                                            <div class="text-muted" style="font-size: 13px;">@user.RoleName</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>@user.Email</td>
+                                <td>@user.City</td>
+                                <td>@user.Age</td>
+                                <td>
+                                    @if (user.Action == "Freeze")
+                                    {
+                                        <span class="badge badge-status badge-frozen">Frozen</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge badge-status badge-active">Active</span>
+                                    }
+                                </td>
+                                <td>@user.RoleName</td>
+                                <td class="text-center">
+                                    <!-- Dropdown -->
+                                    <div class="dropdown">
+                                        <button class="btn btn-sm btn-light border dropdown-toggle custom-dropdown-btn" type="button" data-bs-toggle="dropdown">
+                                            Manage
+                                        </button>
+                                        <ul class="dropdown-menu custom-dropdown-menu">
+                                            <li>
+                                                <form asp-action="UpdateEmployeeAction" method="post" onsubmit="return confirm('Freeze this employee?');" class="m-0">
+                                                    <input type="hidden" name="id" value="@user.Id" />
+                                                    <button type="submit" class="dropdown-item">Freeze</button>
+                                                </form>
+                                            </li>
+                                            <li>
+                                                <form asp-action="UpdateEmployeeActionTwo" method="post" onsubmit="return confirm('Unfreeze this employee?');" class="m-0">
+                                                    <input type="hidden" name="id" value="@user.Id" />
+                                                    <button type="submit" class="dropdown-item">Unfreeze</button>
+                                                </form>
+                                            </li>
+                                            <li>
+                                                <form asp-action="DeleteAddEmployee" method="post" onsubmit="return confirm('Delete this employee?');" class="m-0">
+                                                    <input type="hidden" name="id" value="@user.Id" />
+                                                    <button type="submit" class="dropdown-item text-danger">Delete</button>
+                                                </form>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card View -->
+    <div class="tab-pane fade" id="cardView">
+        <div class="row mt-3">
+            @foreach (var user in Model)
+            {
+                <div class="col-md-4 mb-4">
+                    <div class="stat-card">
+                        <div class="employee-info">
+                            @if (!string.IsNullOrEmpty(user.ImagePath))
+                            {
+                                <img src="~/profile_images/@user.ImagePath" />
+                            }
+                            else
+                            {
+                                <img src="~/img/default-user.png" />
+                            }
+                            <div>
+                                <div class="fw-bold">@user.Name</div>
+                                <div class="text-muted">@user.RoleName</div>
+                                <div class="small">@user.Email</div>
+                            </div>
+                        </div>
+                        <div>
+                            @if (user.Action == "Freeze")
+                            {
+                                <span class="badge badge-status badge-frozen">Frozen</span>
+                            }
+                            else
+                            {
+                                <span class="badge badge-status badge-active">Active</span>
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+    <!-- Analytics View (placeholder for charts later) -->
+    @* <div class="tab-pane fade" id="analyticsView">
+        <div class="p-4 text-center">
+            <h5>📊 Employee Analytics Coming Soon</h5>
+            <p class="text-muted">Here you can display charts for employee distribution, trends, and more.</p>
+        </div>
+    </div> *@
+</div>
+@* </div> *@
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const searchInput = document.querySelector(".toolbar input[type='text']");
+        const filterSelect = document.querySelector(".toolbar select");
+
+        function filterEmployees() {
+            const searchValue = searchInput.value.toLowerCase();
+            const filterValue = filterSelect.value.toLowerCase();
+
+            // === Table View Filtering ===
+            document.querySelectorAll("#tableView tbody tr").forEach(row => {
+                const name = row.querySelector(".employee-info .fw-bold")?.textContent.toLowerCase() || "";
+                const email = row.querySelector("td:nth-child(3)")?.textContent.toLowerCase() || "";
+                const status = row.querySelector(".badge-status")?.textContent.toLowerCase() || "";
+
+                const matchesSearch = name.includes(searchValue) || email.includes(searchValue);
+                const matchesFilter = !filterValue || status.includes(filterValue);
+
+                row.style.display = (matchesSearch && matchesFilter) ? "" : "none";
+            });
+
+            // === Card View Filtering ===
+            document.querySelectorAll("#cardView .col-md-4").forEach(card => {
+                const name = card.querySelector(".fw-bold")?.textContent.toLowerCase() || "";
+                const email = card.querySelector(".small")?.textContent.toLowerCase() || "";
+                const status = card.querySelector(".badge-status")?.textContent.toLowerCase() || "";
+
+                const matchesSearch = name.includes(searchValue) || email.includes(searchValue);
+                const matchesFilter = !filterValue || status.includes(filterValue);
+
+                card.style.display = (matchesSearch && matchesFilter) ? "" : "none";
+            });
+        }
+
+        // Events
+        searchInput.addEventListener("keyup", filterEmployees);
+        filterSelect.addEventListener("change", filterEmployees);
+    });
+</script>

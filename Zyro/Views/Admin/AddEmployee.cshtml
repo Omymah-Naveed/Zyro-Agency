@@ -1,0 +1,294 @@
+﻿@model AdminRegisterationCustomViewModel
+@{
+    Layout = "_LayoutAdmin";
+
+    ViewData["Title"] = "Employees";
+}
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+
+<style>
+    /* Container */
+    .signup-container {
+        max-width: 480px;
+        margin: auto;
+        padding: 30px;
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        /* Smooth entry (no keyframes) */
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+    }
+
+        /* Show animation class (add via JS) */
+        .signup-container.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+    /* Heading */
+    h2 {
+        text-align: center;
+        font-weight: 600;
+        margin-bottom: 25px;
+        color: #333;
+    }
+
+    /* Form Groups */
+    .form-group {
+        margin-bottom: 18px;
+        position: relative;
+    }
+
+    /* Labels */
+    label {
+        font-weight: 500;
+        margin-bottom: 6px;
+        display: block;
+        color: #555;
+        transition: color 0.3s ease, font-weight 0.3s ease;
+    }
+
+    /* Inputs & Selects */
+    .form-control {
+        height: 48px;
+        font-size: 15px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        padding: 10px 14px;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+        /* Input focus */
+        .form-control:focus,
+        select.form-control:focus {
+            border-color: #235695 !important;
+            box-shadow: 0 0 0 0.2rem rgba(35, 86, 149, 0.25) !important;
+            outline: none;
+        }
+
+    /* Label color when input/select focused */
+    .form-group input:focus + label,
+    .form-group select:focus + label {
+        color: #235695 !important;
+        font-weight: 600;
+    }
+
+    /* Button */
+    .btn-reg-emp {
+        width: 100%;
+        padding: 12px;
+        font-size: 17px;
+        font-weight: 600;
+        border-radius: 10px;
+        background-color: #2373AE;
+        border: 1px solid transparent; /* ✅ transparent border to prevent size jump */
+        transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
+        color: white;
+        cursor: pointer;
+    }
+
+        /* Hover state */
+        .btn-reg-emp:hover {
+            background-color: white;
+            color: #2373AE;
+            border: 1px solid #2373AE; /* ✅ border color only changes */
+        }
+
+        /* Focus/active state */
+        .btn-reg-emp:focus,
+        .btn-reg-emp:active,
+        .btn-reg-emp:focus-visible {
+            border: 1px solid #2373AE !important;
+            box-shadow: 0 0 0 0.2rem rgba(35, 115, 174, 0.3) !important; /* ✅ soft blue glow */
+            outline: none !important;
+        }
+
+    /* Error text */
+    .text-danger {
+        font-size: 14px;
+    }
+
+    /* Modal */
+    .modal-content {
+        border-radius: 12px;
+    }
+
+    .modal-body h5 {
+        font-weight: 500;
+        color: #333;
+    }
+
+    .modal-footer .btn {
+        font-weight: 600;
+    }
+
+
+</style>
+
+<div class="signup-container">
+    <h2>Add Employee</h2>
+
+    @if (TempData["ErrorMessageAddEmployee"] != null)
+    {
+        <script>
+            window.onload = function () {
+                var modal = new bootstrap.Modal(document.getElementById('messageModal'));
+                modal.show();
+            };
+        </script>
+
+        <div class="modal fade" id="messageModal" tabindex="-1" aria-labelledby="messageModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body text-center">
+                        <h5>@TempData["ErrorMessageAddEmployee"]</h5>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger w-100 rounded-pill" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+        
+
+    <form asp-action="AddEmployee" method="post" id="addEmployeeForm" novalidate>
+    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+    <div class="form-group">
+        <label asp-for="registrationFormData.Name"></label>
+        <input asp-for="registrationFormData.Name" class="form-control w-100" id="empName" placeholder="Enter employee name" required minlength="3" />
+        <small id="empNameError" class="text-danger" style="display:none;">Name must be at least 3 characters.</small>
+        <span asp-validation-for="registrationFormData.Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="registrationFormData.Email"></label>
+        <input asp-for="registrationFormData.Email" class="form-control" id="empEmail" type="email" placeholder="Enter employee email" required />
+        <small id="empEmailError" class="text-danger" style="display:none;">Enter a valid email address.</small>
+        <span asp-validation-for="registrationFormData.Email" class="text-danger"></span>
+    </div>
+
+        <div class="form-group">
+            <label asp-for="registrationFormData.Password" class="form-label">Password</label>
+            <div class="input-group">
+                <input asp-for="registrationFormData.Password"
+                       class="form-control"
+                       id="empPassword"
+                       type="password"
+                       placeholder="Enter password"
+                       required
+                       minlength="6"
+                       maxlength="20" />
+                <span class="input-group-text" onclick="toggleEmpPassword()" style="cursor:pointer;">
+                    <i class="fas fa-eye" id="empEyeIcon"></i>
+                </span>
+            </div>
+            <small id="empPasswordError" class="text-danger d-none">
+                Password must be 6–20 characters and include letters & numbers.
+            </small>
+            <span asp-validation-for="registrationFormData.Password" class="text-danger"></span>
+        </div>
+    @if (Model.RoleList == null || !Model.RoleList.Any())
+    {
+        <p class="text-danger text-center">⚠️ No roles found! Please contact admin.</p>
+    }
+    else
+    {
+        <div class="form-group">
+            <label asp-for="registrationFormData.Role"></label>
+            <select asp-for="registrationFormData.Role" class="form-control" required>
+                <option value="">-- Select Role --</option>
+                @foreach (var item in Model.RoleList)
+                {
+                    <option value="@item.Id">@item.Role</option>
+                }
+            </select>
+            <span asp-validation-for="registrationFormData.Role" class="text-danger"></span>
+        </div>
+    }
+
+        <button type="submit" class="btn btn-reg-emp">Register</button>
+</form>
+
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        // Toggle password visibility
+               function toggleEmpPassword() {
+            const input = document.getElementById("empPassword");
+            const icon = document.getElementById("empEyeIcon");
+            if (input.type === "password") {
+                input.type = "text";
+                icon.classList.replace("fa-eye", "fa-eye-slash");
+            } else {
+                input.type = "password";
+                icon.classList.replace("fa-eye-slash", "fa-eye");
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const nameInput = document.getElementById("empName");
+            const emailInput = document.getElementById("empEmail");
+            const passwordInput = document.getElementById("empPassword");
+
+            const nameError = document.getElementById("empNameError");
+            const emailError = document.getElementById("empEmailError");
+            const passwordError = document.getElementById("empPasswordError");
+
+            // Name validation
+            nameInput.addEventListener("input", function () {
+                nameError.style.display = nameInput.value.length >= 3 ? "none" : "block";
+            });
+
+            // Email validation
+            emailInput.addEventListener("input", function () {
+                const regex = /^[^\s@@]+@@[^\s@@]+\.[^\s@@]+$/;
+                emailError.style.display = regex.test(emailInput.value) ? "none" : "block";
+            });
+
+            // Password validation
+            passwordInput.addEventListener("input", function () {
+                const regex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,20}$/;
+                passwordError.style.display = regex.test(passwordInput.value) ? "none" : "block";
+            });
+
+            // Form validation before submit
+            document.getElementById("addEmployeeForm").addEventListener("submit", function (e) {
+                let valid = true;
+
+                if (nameInput.value.length < 3) {
+                    nameError.style.display = "block";
+                    valid = false;
+                }
+
+                const emailRegex = /^[^\s@@]+@@[^\s@@]+\.[^\s@@]+$/;
+                if (!emailRegex.test(emailInput.value)) {
+                    emailError.style.display = "block";
+                    valid = false;
+                }
+
+                const passRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,20}$/;
+                if (!passRegex.test(passwordInput.value)) {
+                    passwordError.style.display = "block";
+                    valid = false;
+                }
+
+                if (!valid) {
+                    e.preventDefault();
+                }
+            });
+        });
+
+                window.addEventListener("DOMContentLoaded", () => {
+            document.querySelector(".signup-container").classList.add("show");
+        });
+    </script>
+}

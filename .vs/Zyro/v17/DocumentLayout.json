@@ -1,0 +1,182 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\WebSites\\Zyro\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0D5808D8-C3CA-47AA-BEA1-44DFC6398DE6}|Zyro\\Zyro.csproj|d:\\websites\\zyro\\zyro\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{0D5808D8-C3CA-47AA-BEA1-44DFC6398DE6}|Zyro\\Zyro.csproj|solutionrelative:zyro\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D5808D8-C3CA-47AA-BEA1-44DFC6398DE6}|Zyro\\Zyro.csproj|d:\\websites\\zyro\\zyro\\data\\zyrocontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D5808D8-C3CA-47AA-BEA1-44DFC6398DE6}|Zyro\\Zyro.csproj|solutionrelative:zyro\\data\\zyrocontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D5808D8-C3CA-47AA-BEA1-44DFC6398DE6}|Zyro\\Zyro.csproj|d:\\websites\\zyro\\zyro\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D5808D8-C3CA-47AA-BEA1-44DFC6398DE6}|Zyro\\Zyro.csproj|solutionrelative:zyro\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D5808D8-C3CA-47AA-BEA1-44DFC6398DE6}|Zyro\\Zyro.csproj|d:\\websites\\zyro\\zyro\\views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0D5808D8-C3CA-47AA-BEA1-44DFC6398DE6}|Zyro\\Zyro.csproj|solutionrelative:zyro\\views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D5808D8-C3CA-47AA-BEA1-44DFC6398DE6}|Zyro\\Zyro.csproj|d:\\websites\\zyro\\zyro\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0D5808D8-C3CA-47AA-BEA1-44DFC6398DE6}|Zyro\\Zyro.csproj|solutionrelative:zyro\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D5808D8-C3CA-47AA-BEA1-44DFC6398DE6}|Zyro\\Zyro.csproj|d:\\websites\\zyro\\zyro\\views\\admin\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0D5808D8-C3CA-47AA-BEA1-44DFC6398DE6}|Zyro\\Zyro.csproj|solutionrelative:zyro\\views\\admin\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D5808D8-C3CA-47AA-BEA1-44DFC6398DE6}|Zyro\\Zyro.csproj|d:\\websites\\zyro\\zyro\\views\\shared\\_layout.cshtml.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{0D5808D8-C3CA-47AA-BEA1-44DFC6398DE6}|Zyro\\Zyro.csproj|solutionrelative:zyro\\views\\shared\\_layout.cshtml.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D5808D8-C3CA-47AA-BEA1-44DFC6398DE6}|Zyro\\Zyro.csproj|d:\\websites\\zyro\\zyro\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0D5808D8-C3CA-47AA-BEA1-44DFC6398DE6}|Zyro\\Zyro.csproj|solutionrelative:zyro\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D5808D8-C3CA-47AA-BEA1-44DFC6398DE6}|Zyro\\Zyro.csproj|d:\\websites\\zyro\\zyro\\models\\dashviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D5808D8-C3CA-47AA-BEA1-44DFC6398DE6}|Zyro\\Zyro.csproj|solutionrelative:zyro\\models\\dashviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D5808D8-C3CA-47AA-BEA1-44DFC6398DE6}|Zyro\\Zyro.csproj|d:\\websites\\zyro\\zyro\\models\\adminregisteration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D5808D8-C3CA-47AA-BEA1-44DFC6398DE6}|Zyro\\Zyro.csproj|solutionrelative:zyro\\models\\adminregisteration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ZyroContext.cs",
+              "DocumentMoniker": "D:\\WebSites\\Zyro\\Zyro\\Data\\ZyroContext.cs",
+              "RelativeDocumentMoniker": "Zyro\\Data\\ZyroContext.cs",
+              "ToolTip": "D:\\WebSites\\Zyro\\Zyro\\Data\\ZyroContext.cs",
+              "RelativeToolTip": "Zyro\\Data\\ZyroContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-13T13:27:49.923Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\WebSites\\Zyro\\Zyro\\appsettings.json",
+              "RelativeDocumentMoniker": "Zyro\\appsettings.json",
+              "ToolTip": "D:\\WebSites\\Zyro\\Zyro\\appsettings.json",
+              "RelativeToolTip": "Zyro\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-01-13T13:20:44.817Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "_LayoutAdmin.cshtml",
+              "DocumentMoniker": "D:\\WebSites\\Zyro\\Zyro\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "RelativeDocumentMoniker": "Zyro\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "ToolTip": "D:\\WebSites\\Zyro\\Zyro\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "RelativeToolTip": "Zyro\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "ViewState": "AgIAAPoAAAAAAAAAAAAmwBABAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-25T14:45:52.348Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "_Layout.cshtml.css",
+              "DocumentMoniker": "D:\\WebSites\\Zyro\\Zyro\\Views\\Shared\\_Layout.cshtml.css",
+              "RelativeDocumentMoniker": "Zyro\\Views\\Shared\\_Layout.cshtml.css",
+              "ToolTip": "D:\\WebSites\\Zyro\\Zyro\\Views\\Shared\\_Layout.cshtml.css",
+              "RelativeToolTip": "Zyro\\Views\\Shared\\_Layout.cshtml.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-09-25T14:44:30.966Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\WebSites\\Zyro\\Zyro\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Zyro\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\WebSites\\Zyro\\Zyro\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Zyro\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAIQAAAAAAAAAAAAAAJQAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-25T14:44:27.839Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "D:\\WebSites\\Zyro\\Zyro\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "Zyro\\Controllers\\AdminController.cs",
+              "ToolTip": "D:\\WebSites\\Zyro\\Zyro\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "Zyro\\Controllers\\AdminController.cs",
+              "ViewState": "AgIAAMwBAAAAAAAAAAAAAOwBAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T14:40:35.904Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AdminRegisteration.cs",
+              "DocumentMoniker": "D:\\WebSites\\Zyro\\Zyro\\Models\\AdminRegisteration.cs",
+              "RelativeDocumentMoniker": "Zyro\\Models\\AdminRegisteration.cs",
+              "ToolTip": "D:\\WebSites\\Zyro\\Zyro\\Models\\AdminRegisteration.cs",
+              "RelativeToolTip": "Zyro\\Models\\AdminRegisteration.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAA5wBEAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T14:37:45.148Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "DashViewModel.cs",
+              "DocumentMoniker": "D:\\WebSites\\Zyro\\Zyro\\Models\\DashViewModel.cs",
+              "RelativeDocumentMoniker": "Zyro\\Models\\DashViewModel.cs",
+              "ToolTip": "D:\\WebSites\\Zyro\\Zyro\\Models\\DashViewModel.cs",
+              "RelativeToolTip": "Zyro\\Models\\DashViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T14:36:35.274Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Profile.cshtml",
+              "DocumentMoniker": "D:\\WebSites\\Zyro\\Zyro\\Views\\Admin\\Profile.cshtml",
+              "RelativeDocumentMoniker": "Zyro\\Views\\Admin\\Profile.cshtml",
+              "ToolTip": "D:\\WebSites\\Zyro\\Zyro\\Views\\Admin\\Profile.cshtml",
+              "RelativeToolTip": "Zyro\\Views\\Admin\\Profile.cshtml",
+              "ViewState": "AgIAANIAAAAAAAAAAAAAANwAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-25T14:35:50.226Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\WebSites\\Zyro\\Zyro\\Views\\Admin\\Index.cshtml",
+              "RelativeDocumentMoniker": "Zyro\\Views\\Admin\\Index.cshtml",
+              "ToolTip": "D:\\WebSites\\Zyro\\Zyro\\Views\\Admin\\Index.cshtml",
+              "RelativeToolTip": "Zyro\\Views\\Admin\\Index.cshtml",
+              "ViewState": "AgIAAOUAAAAAAAAAAAAWwPkAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-25T14:34:06.05Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
